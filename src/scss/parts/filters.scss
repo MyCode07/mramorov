@@ -1,0 +1,232 @@
+.filters-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 45px;
+
+    @media (max-width: 768px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-bottom: 15px;
+    }
+}
+
+.filter {
+    // .filter-fast
+
+    &-fast {
+        width: 100%;
+    }
+
+    // .filter-sort
+
+    &-sort {
+        position: relative;
+        // .filter-sort__btn
+
+        &__btn {
+            cursor: pointer;
+            position: relative;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            width: fit-content;
+
+            span,
+            img,
+            svg,
+            picture {
+                pointer-events: none;
+                transition: transform 0.3s ease 0s;
+            }
+
+            &._active {
+                img,
+                svg,
+                picture {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+
+        .select {
+            position: absolute;
+            left: 0;
+            top: 100%;
+            display: none;
+            width: 100%;
+            max-width: 200px;
+
+            @media (max-width: 768px) {
+                max-width: 150px;
+            }
+
+            &._active {
+                display: block;
+            }
+        }
+
+        .select-body {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0;
+            margin-top: 5px;
+
+            label {
+                width: 100%;
+                background-color: $black;
+            }
+        }
+    }
+
+    // .filter-colors
+
+    &-colors {
+        @media (max-width: 768px) {
+            grid-column: span 2;
+            order: -1;
+            margin-bottom: 15px;
+        }
+
+        a {
+            display: block;
+            width: 25px;
+            height: 60px;
+            opacity: 0.3;
+            transition: opacity 0.3s ease 0s;
+            flex: 0 0 auto;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    opacity: 1;
+                }
+            }
+
+            &._active {
+                opacity: 1;
+            }
+
+            @media (max-width: 1024px) {
+                width: 20px;
+                height: 40px;
+            }
+
+            img,
+            picture {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                pointer-events: none;
+            }
+        }
+
+        .select-body {
+            justify-content: center;
+            gap: 10px;
+
+            @media (max-width: 768px) {
+                gap: 5px;
+                justify-content: flex-start;
+                width: 100vw;
+                margin-left: -10px;
+                padding-inline: 10px;
+
+                overflow-x: auto;
+
+                & ::-webkit-scrollbar {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    // .filter-currency
+
+    &-currency {
+        .select-body {
+            justify-content: flex-end;
+        }
+
+        a {
+            width: 15px;
+            height: 18px;
+            transition: opacity 0.3s ease 0s;
+
+            @media (max-width: 1024px) {
+                width: 13px;
+                height: 16px;
+
+            }
+
+            &._active {
+                opacity: 0.3;
+            }
+
+            @media (any-hover: hover) {
+                &:hover {
+                    opacity: 0.5;
+                }
+            }
+
+            img,
+            picture,
+            svg {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+    }
+}
+
+.select {
+    z-index: 3;
+    // .select-body
+
+    &-body {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        @media (max-width: 768px) {
+            gap: 10px;
+        }
+
+        label {
+            cursor: pointer;
+            padding: 10px;
+            white-space: nowrap;
+            transition: background-color 0.3s ease 0s;
+
+            @media (max-width: 1024px) {
+                padding: 5px;
+                padding-bottom: 7px;
+            }
+
+            span {
+                transition: opacity 0.3s ease 0s;
+            }
+
+            &._active {
+                span {
+                    opacity: 0.3;
+                }
+            }
+
+            @media (any-hover: hover) {
+                &:hover {
+                    background-color: #080808;
+                    span {
+                        opacity: 0.5;
+                    }
+                }
+            }
+
+            input {
+                display: none;
+            }
+        }
+    }
+}

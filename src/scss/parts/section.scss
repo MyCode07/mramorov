@@ -1,0 +1,495 @@
+.section {
+    padding-bottom: 200px;
+    position: relative;
+    z-index: 2;
+
+    @media (max-width: 1024px) {
+        padding-bottom: 150px;
+    }
+
+    @media (max-width: 768px) {
+        padding-bottom: 45px;
+    }
+
+    // .section__container
+
+    &__container {
+    }
+
+    // .section__body
+
+    &__body {
+    }
+
+    &.pages-hero {
+        margin-bottom: 60px;
+        height: 650px;
+        position: relative;
+
+        @media (max-width: 768px) {
+            margin-bottom: 30px;
+        }
+
+        &:after {
+            position: absolute;
+            content: "";
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, $black 100%);
+        }
+
+        img,
+        picture {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+    }
+}
+
+.quote {
+    padding: 200px 0;
+
+    @media (max-width: 1024px) {
+        padding: 150px 0;
+    }
+
+    @media (max-width: 768px) {
+        padding: 45px 0;
+    }
+
+    p {
+        text-align: center;
+        font-family: Felidae;
+        @include adaptive-value("font-size", 120, 28, 1);
+        font-weight: 400;
+        line-height: 0.9;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+    }
+}
+
+.catalog {
+    height: 100vh;
+    padding-bottom: 60px;
+
+    .section__body,
+    ._container {
+        height: 100%;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+
+        li {
+            a {
+                display: flex;
+                align-items: flex-end;
+                width: 100%;
+                opacity: 0.6;
+                padding: 2px 0;
+                font-size: 18px;
+                line-height: 1;
+                letter-spacing: -0.054px;
+                text-transform: uppercase;
+
+                span {
+                    white-space: nowrap;
+                }
+
+                & > :last-child {
+                    margin-left: auto;
+                }
+
+                div {
+                    pointer-events: none;
+                    display: flex;
+                    align-items: flex-end;
+                    width: 100%;
+                    overflow: hidden;
+                    gap: 9px;
+                    padding-inline: 5px;
+                    padding-bottom: 3px;
+                    max-width: 0;
+                    transition: max-width 0.5s ease-in 0s;
+                    opacity: 0;
+
+                    label {
+                        flex: 0 0 auto;
+                        width: 3px;
+                        height: 3px;
+                        border-radius: 10px;
+                        background-color: $red;
+                    }
+                }
+
+                @media (any-hover: hover) {
+                    &:hover {
+                        opacity: 1;
+                        background-color: $white;
+                        color: $black;
+                        font-weight: 500;
+
+                        div {
+                            opacity: 1;
+                            max-width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    ._btn {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.red {
+    .section__body {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: $text-red;
+    }
+
+    p {
+        text-align: center;
+        font-family: Felidae;
+        @include adaptive-value("font-size", 34, 24, 1);
+        line-height: 1;
+        width: 100%;
+        @media (min-width: 769px) {
+            max-width: 45%;
+        }
+    }
+
+    span {
+        font-family: Felidae;
+        text-align: center;
+        @include adaptive-value("font-size", 110, 64, 1);
+        line-height: 0.9;
+        text-transform: uppercase;
+    }
+
+    video,
+    iframe {
+        display: block;
+        margin-top: 60px;
+        margin-bottom: 140px;
+        @include adaptive-value("width", 300, 210, 1);
+        @include adaptive-value("height", 380, 290, 1);
+        object-fit: cover;
+
+        @media (max-width: 1024px) {
+            margin-bottom: 100px;
+        }
+    }
+}
+
+.steps {
+    ol {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            padding: 30px 0;
+
+            text-align: center;
+
+            @media (max-width: 1024px) {
+                gap: 10px;
+            }
+
+            span {
+                @include adaptive-value("font-size", 40, 20, 1);
+                line-height: 1;
+                letter-spacing: -0.03px;
+                text-transform: uppercase;
+            }
+
+            p {
+                max-width: 300px;
+                width: 100%;
+                color: $white;
+            }
+        }
+    }
+}
+
+.fullscreen {
+    img,
+    picture {
+        @include adaptive-value("height", 1080, 280, 1);
+    }
+}
+
+.partners {
+    .grid {
+        margin-inline: auto;
+        max-width: 1570px;
+        width: 100%;
+    }
+    // .partners-item{
+
+    &-item {
+        height: 120px;
+
+        img,
+        picture {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        @media (max-width: 1024px) {
+            height: 80px;
+        }
+
+        @media (max-width: 768px) {
+            height: 50px;
+        }
+    }
+}
+
+.stones {
+    .section__body {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: 100vh;
+        position: relative;
+
+        @media (max-width: 1024px) {
+            height: fit-content;
+            padding-top: 170px;
+        }
+    }
+
+    // .stones__images
+
+    &__images {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        img,
+        picture {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    // .stones__content
+
+    &__content {
+        padding: 25px;
+        background-color: $black;
+        position: relative;
+        z-index: 1;
+        width: fit-content;
+        max-width: 500px;
+        width: 100%;
+        margin-left: 15px;
+        margin-bottom: 30px;
+
+        @media (max-width: 1024px) {
+            padding: 20px;
+            margin-left: 10px;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            padding: 15px;
+            max-width: 70%;
+        }
+
+        @media (max-width: 600px) {
+            max-width: calc(100% - 20px);
+        }
+
+        div {
+            margin-bottom: 60px;
+
+            @media (max-width: 1024px) {
+                margin-bottom: 45px;
+            }
+
+            @media (max-width: 768px) {
+                margin-bottom: 30px;
+            }
+
+            span {
+                display: block;
+                color: #fff;
+                @include adaptive-value("font-size", 34, 20, 1);
+                line-height: 1;
+                letter-spacing: -0.03px;
+                margin-bottom: 10px;
+            }
+        }
+
+        ol {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+            @media (max-width: 1024px) {
+                margin-bottom: 15px;
+            }
+
+            li {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+
+                label {
+                    opacity: 0.5;
+                    font-size: 12px;
+                    font-weight: 300;
+                    line-height: 1;
+                    letter-spacing: -0.03px;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+
+    // .stones__buttons
+
+    &__buttons {
+        display: flex;
+        position: relative;
+        z-index: 1;
+
+        @media (max-width: 1024px) {
+            width: 100vw;
+            overflow-x: auto;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+            padding: 15px;
+            border-right: 1px solid rgba($color: $white, $alpha: 0.1);
+            background: rgba($color: $black, $alpha: 0.5);
+            backdrop-filter: blur(2.5px);
+            width: 100%;
+            font-size: 14px;
+            line-height: 100%;
+            letter-spacing: -0.03px;
+            cursor: pointer;
+
+            @media (max-width: 1024px) {
+                padding: 15px 10px;
+                white-space: nowrap;
+            }
+
+            &._active {
+                background-color: $black;
+            }
+        }
+    }
+}
+
+.category {
+    margin-bottom: 60px;
+    
+    @media (max-width: 1024px) {
+        margin-bottom: 45px;
+    }
+
+    @media (max-width: 768px) {
+        margin-bottom: 30px;
+    }
+
+    // .category__box
+
+    &__box {
+        @media (max-width: 768px) {
+            margin: 15px 0;
+        }
+
+        div {
+            margin: 30px 0;
+
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            height: 100%;
+
+            width: 100%;
+            @include adaptive-value("font-size", 24, 16, 1);
+            line-height: 1;
+            letter-spacing: -0.03px;
+            text-transform: uppercase;
+
+            h3 {
+                white-space: nowrap;
+            }
+
+            & > :last-child {
+                margin-left: auto;
+            }
+
+            span {
+                pointer-events: none;
+                display: flex;
+                align-items: flex-end;
+                width: 100%;
+                overflow: hidden;
+                gap: 9px;
+                padding-inline: 5px;
+                padding-bottom: 3px;
+
+                label {
+                    flex: 0 0 auto;
+                    width: 3px;
+                    height: 3px;
+                    border-radius: 10px;
+                    background-color: $red;
+                }
+            }
+        }
+
+        p {
+            max-width: 490px;
+            font-weight: 300;
+            font-size: 18px;
+
+            @media (max-width: 1024px) {
+                font-size: 16px;
+            }
+
+            @media (max-width: 768px) {
+                font-size: 14;
+            }
+        }
+    }
+}

@@ -1,0 +1,231 @@
+.footer {
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 15px;
+
+    @media (max-width: 1024px) {
+        padding-bottom: 10px;
+    }
+
+    &:after {
+        pointer-events: none;
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, $black 2%, rgba(0, 0, 0, 0) 100%);
+    }
+
+    // .footer__bgi
+
+    &__bgi {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+
+        img,
+        picture {
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            object-fit: cover;
+        }
+    }
+
+    // .footer__container
+
+    &__container {
+    }
+
+    // .footer__body
+
+    &__body {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    // .footer__top
+
+    &__top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 60px;
+        margin-bottom: 60px;
+
+        @media (max-width: 768px) {
+            gap: 45px;
+            margin-bottom: 45px;
+        }
+    }
+
+    // .footer__column
+
+    &__column {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+
+        @media (max-width: 768px) {
+            align-items: center;
+
+            * {
+                text-align: center;
+            }
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        span,
+        label {
+            color: rgba($color: $white, $alpha: 0.25);
+            font-size: 12px;
+            line-height: 1;
+            letter-spacing: -0.3px;
+            text-transform: uppercase;
+            text-align: center;
+
+            @media (max-width: 768px) {
+                font-size: 10px;
+                letter-spacing: normal;
+            }
+        }
+    }
+
+    // .footer__navigation
+
+    &__navigation {
+    }
+
+    // .footer__contacts
+
+    &__contacts {
+        gap: 30px;
+        align-items: center;
+
+        @media (max-width: 768px) {
+            order: -1;
+        }
+
+        & > div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+
+            ul {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 30px;
+
+                @media (max-width: 1024px) {
+                    gap: 15px;
+                }
+
+                li {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                }
+            }
+        }
+    }
+
+    // .footer__services
+
+    &__services {
+    }
+
+    // .footer__logo
+
+    &__logo {
+        display: block;
+        margin-bottom: 60px;
+        @include adaptive-value("height", 218, 160, 1);
+
+        @media (max-width: 768px) {
+            margin-bottom: 45px;
+        }
+
+        img,
+        picture {
+            pointer-events: none;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    // .footer__bottom
+
+    &__bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 2px;
+        background-color: $red;
+
+        * {
+            width: 100%;
+        }
+
+        & > :nth-child(2) {
+            text-align: center;
+        }
+
+        & > :last-child {
+            text-align: right;
+        }
+
+        @media (max-width: 768px) {
+            a {
+                span {
+                    display: none;
+                }
+            }
+        }
+
+        @media (max-width: 425px) {
+            font-size: 10px;
+        }
+    }
+
+    ._numbers {
+        font-size: 14px;
+
+        @media (max-width: 768px) {
+            font-size: 12px;
+        }
+    }
+
+    a,
+    span,
+    label {
+        white-space: nowrap;
+    }
+
+    a:not(.footer__logo) {
+        transition: all 0.3s ease 0s;
+
+        @media (any-hover: hover) {
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+    }
+}

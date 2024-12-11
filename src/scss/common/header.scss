@@ -9,36 +9,24 @@
 
     &._active,
     &._sticky {
-        background-color: $white;
-        color: $black;
-
+        mix-blend-mode: difference;
         nav > ul > li {
             svg {
                 fill: currentColor;
             }
         }
 
-        .header__burger span {
-            background-color: $black;
-        }
     }
 
     &._sticky {
+        
         box-shadow: 0px 0px 10px 0px rgba($color: $black, $alpha: 0.1);
-
-        &:not(._active) {
-            nav > ul > li {
-                border-color: $stroke;
-            }
-        }
     }
 
     &._active {
-        background-color: $blue;
         color: $white;
 
         .header__burger span {
-            background-color: $white;
         }
 
         &._sticky {
@@ -46,4 +34,103 @@
         }
     }
 
+    // .header__container
+
+    &__container {
+    }
+
+    // .header__body
+
+    &__body {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 0;
+
+        @media (max-width: 1024px) {
+            padding: 10px 0;
+        }
+    }
+
+    // .header__burger
+
+    &__burger {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        position: relative;
+        width: 50px;
+
+        @media (max-width: 768px) {
+            width: 30px;
+        }
+        
+        span {
+            display: block;
+            width: 50px;
+            height: 2px;
+            background-color: $white;
+            transition: all 0.3s ease 0s;
+
+            @media (max-width: 768px) {
+                width: 30px;
+            }
+        }
+
+        &._active {
+            span {
+                position: absolute;
+                left: 0;
+                top: 50%;
+            }
+            & > :first-child {
+                transform: translate(0, -50%) rotate(45deg);
+            }
+
+            & > :last-child {
+                transform: translate(0, -50%) rotate(-45deg);
+            }
+        }
+    }
+
+    // .header__logo
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1 1 auto;
+
+        img,
+        svg {
+            height: 27px;
+
+            @media (max-width: 768px) {
+                height: 15px;
+            }
+        }
+    }
+
+    // .header__basket
+
+    &__basket {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 50px;
+        padding-bottom: 1px;
+        border-bottom: 2px solid $white;
+
+        text-align: center;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1;
+
+        @media (max-width: 768px) {
+            width: 30px;
+            font-size: 10px;
+        }
+    }
 }

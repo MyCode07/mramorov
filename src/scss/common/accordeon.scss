@@ -1,6 +1,5 @@
 .accordion {
     & > :not(:last-child) {
-        border-bottom: 1px solid $stroke;
         margin-bottom: 25px;
     }
 
@@ -34,13 +33,11 @@
             width: 100%;
             cursor: pointer;
 
-            color: $blue;
             @include adaptive-value("font-size", 24, 16, 1);
 
             font-weight: 500;
             line-height: 1.1;
             text-transform: uppercase;
-            color: $blue;
 
             @media (any-hover: hover) {
                 &:hover {
@@ -83,7 +80,6 @@
             display: grid;
             grid-template-rows: 0fr;
             transition: grid-template-rows 0.3s;
-            color: $blue;
 
             // .accordion__item-content-height
 
