@@ -16,6 +16,7 @@
 
     &-fast {
         width: 100%;
+        font-weight: 300;
     }
 
     // .filter-sort
@@ -145,19 +146,29 @@
     // .filter-currency
 
     &-currency {
+        display: flex;
+        justify-content: flex-end;
+
         .select-body {
             justify-content: flex-end;
         }
 
         a {
             width: 15px;
-            height: 18px;
+            height: 14px;
             transition: opacity 0.3s ease 0s;
 
-            @media (max-width: 1024px) {
-                width: 13px;
+            &:nth-child(2) {
                 height: 16px;
+            }
 
+            @media (max-width: 1024px) {
+                width: 14px;
+                height: 13px;
+
+                &:nth-child(2) {
+                    height: 15px;
+                }
             }
 
             &._active {
@@ -187,7 +198,6 @@
 
     &-body {
         display: flex;
-        align-items: center;
         gap: 15px;
 
         @media (max-width: 768px) {
