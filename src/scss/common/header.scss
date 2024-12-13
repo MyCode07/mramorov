@@ -9,29 +9,21 @@
 
     &._active,
     &._sticky {
+
+        .header__logo {
+            display: flex !important;
+        }
+
         mix-blend-mode: difference;
         nav > ul > li {
             svg {
                 fill: currentColor;
             }
         }
-
-    }
-
-    &._sticky {
-        
-        box-shadow: 0px 0px 10px 0px rgba($color: $black, $alpha: 0.1);
     }
 
     &._active {
         color: $white;
-
-        .header__burger span {
-        }
-
-        &._sticky {
-            box-shadow: unset;
-        }
     }
 
     // .header__container
@@ -64,7 +56,7 @@
         @media (max-width: 768px) {
             width: 30px;
         }
-        
+
         span {
             display: block;
             width: 50px;
@@ -100,6 +92,8 @@
         align-items: center;
         justify-content: center;
         flex: 1 1 auto;
+
+        display: none;
 
         img,
         svg {

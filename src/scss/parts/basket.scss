@@ -1,0 +1,206 @@
+.basket {
+    @include adaptive-value("padding-top", 250, 90, 1);
+
+    .section__flex {
+        gap: 60px;
+
+        @media (max-width: 1440px) {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .grid {
+            flex: 1 1 auto;
+            gap: 60px 45px;
+            width: 100%;
+
+            @media (min-width: 1441px) {
+                min-width: 975px;
+            }
+
+            @media (max-width: 1440px) {
+                gap: 45px 30px;
+            }
+
+            @media (max-width: 768px) {
+                gap: 30px;
+            }
+        }
+    }
+
+    // .basket__product
+
+    &__product {
+        // .basket__product-cart
+
+        &-cart {
+            display: flex;
+            gap: 15px;
+
+            @media (max-width: 1440px) {
+                gap: 10px;
+                flex-wrap: wrap;
+            }
+        }
+
+        // .basket__product-image
+
+        &-image {
+            @media (min-width: 1441px) {
+                @include adaptive-value("height", 140, 70, 1);
+                @include adaptive-value("width", 280, 130, 1);
+            }
+
+            @media (max-width: 1440px) {
+                max-width: 37%;
+                height: 120px;
+            }
+
+            @media (max-width: 768px) {
+                height: 140px;
+            }
+
+            @media (max-width: 600px) {
+                height: 100px;
+            }
+
+            @media (max-width: 425px) {
+                height: 75px;
+            }
+
+            img,
+            picture {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                pointer-events: none;
+            }
+        }
+
+        // .basket__product-info
+
+        &-info {
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            position: relative;
+
+            ._product__price {
+                width: fit-content;
+            }
+
+            @media (max-width: 1440px) {
+                * {
+                    font-size: 14px;
+                }
+            }
+        }
+
+        // .basket__product-delete
+
+        &-delete {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 12px;
+            height: 14px;
+            opacity: 0.5;
+            flex: 0 0 auto;
+
+            @media (max-width: 600px) {
+                top: unset;
+                bottom: 0;
+            }
+
+            img,
+            svg,
+            picture {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+
+            @media (any-hover: hover) {
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+
+        // .basket__product-name
+
+        &-name {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            font-weight: 300;
+
+            span {
+                opacity: 0.5;
+            }
+        }
+
+        // .basket__product-actions
+
+        &-actions {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid $red;
+
+            @media (max-width: 1440px) {
+                width: 100%;
+                padding: 5px 0;
+            }
+
+            .quantity {
+                place-self: center;
+                gap: 2px;
+            }
+        }
+    }
+
+    // .basket__order
+
+    &__order {
+        max-width: 590px;
+        min-width: 360px;
+
+        @media (max-width: 1440px) {
+            max-width: 500px;
+            width: 100%;
+            min-width: unset;
+        }
+        // .basket__order-total
+
+        &-total {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            @include adaptive-value("font-size", 24, 18, 1);
+            font-style: normal;
+            font-weight: 400;
+            line-height: 120%;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+
+            border-bottom: 1px solid rgba($color: $red, $alpha: 0.25);
+
+            .filter-fast {
+                width: fit-content;
+            }
+
+            p {
+                white-space: nowrap;
+                display: flex;
+                align-items: center;
+                gap: 3px;
+            }
+        }
+    }
+}

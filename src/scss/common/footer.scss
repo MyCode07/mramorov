@@ -154,6 +154,8 @@
     // .footer__logo
 
     &__logo {
+        position: relative;
+        left: 1%;
         display: block;
         margin-bottom: 60px;
         @include adaptive-value("height", 218, 160, 1);

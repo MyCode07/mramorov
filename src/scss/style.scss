@@ -66,11 +66,16 @@
 // load product
 @import "parts/product";
 
+// load basket
+@import "parts/basket";
+
+
+
 .pages {
     position: fixed;
     top: 50%;
     left: 0;
-    background-color: #000;
+    background-color: #020202;
     z-index: 10000;
     color: #fff;
     width: fit-content;

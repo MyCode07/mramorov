@@ -127,6 +127,10 @@ p {
     @media (max-width: 768px) {
         font-size: 14px;
     }
+
+    @media (max-width: 425px) {
+        font-size: 12px;
+    }
 }
 
 .text-box {
@@ -613,6 +617,50 @@ button {
 ._no-aspect-ratio {
     @media (min-width: 769px) {
         aspect-ratio: unset !important;
+    }
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    @media (max-width: 1024px) {
+        gap: 5px;
+    }
+
+    .qty-btn {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 15px;
+        height: 15px;
+        flex: 0 0 auto;
+
+        svg,
+        img,
+        picture {
+            flex: 0 0 auto;
+            pointer-events: none;
+            transition: opacity 0.3s ease 0s;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                svg,
+                img,
+                picture {
+                    opacity: 0.5;
+                }
+            }
+        }
+    }
+
+    input {
+        text-align: center;
+        width: 36px;
+        flex: 0 0 auto;
     }
 }
 
