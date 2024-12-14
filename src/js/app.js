@@ -1,33 +1,28 @@
-// import { maskInputs } from "./static/inputmask.js";
-// import { accorden } from "./static/accordeon.js";
-// import { runTicker } from "./static/ticker.js";
+import { maskInputs } from "./static/inputmask.js";
 import { replaceDomElements } from "./static/replace.js";
 import { stickyHeader } from "./parts/header.js";
-// import { playVideoAction } from "./parts/video.js";
-// import { range } from "./parts/range.js";
+import { playVideoAction } from "./parts/video.js";
 
-// import "./parts/forms.js";
-// import "./parts/sliders.js";
-// import "./parts/popup.js";
+import "./parts/sliders.js";
+import "./parts/popup.js";
 import "./parts/menu.js";
 import "./parts/tabs.js";
-// import "./parts/service-image-hover.js";
 import "./parts/filters.js";
-// import "./parts/cart.js";
-// import "./parts/single-product.js";
+import "./parts/canvas.js";
+import { animateAction, animateImagesAction, animateStaggerAction } from "./parts/animations.js";
 
-// range();
-// accorden();
 replaceDomElements();
-// runTicker();
-stickyHeader(); 
-// maskInputs('+7 (999) 999-99-99', '[name="phone"]')
-// playVideoAction();
+stickyHeader();
+maskInputs('+7 (999) 999-99-99', '[name="phone"]')
+playVideoAction();
+animateStaggerAction();
+animateAction();
+animateImagesAction();
 
-// import { Fancybox } from "@fancyapps/ui";
-// Fancybox.bind("[data-fancybox]", {
-// });
 
+import { Fancybox } from "@fancyapps/ui";
+Fancybox.bind("[data-fancybox]", {
+});
 
 document.addEventListener('click', function (e) {
     let targetEl = e.target;
@@ -35,3 +30,7 @@ document.addEventListener('click', function (e) {
         document.querySelector('.pages').classList.toggle('_hide');
     }
 })
+
+
+// https://codepen.io/glivera/pen/zoMMGO?css-preprocessor=none
+// https://frontend.horse/articles/amazing-animation-techniques-with-gsap/

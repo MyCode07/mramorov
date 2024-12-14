@@ -16,7 +16,8 @@
 // load fancybox
 @import "../../node_modules/@fancyapps/ui/dist/fancybox/fancybox";
 
-
+// load animations
+@import "common/animations";
 
 // load common
 @import "common/common";
@@ -45,11 +46,11 @@
 // load grid
 @import "parts/grid";
 
-// load hero
-@import "parts/hero";
-
 // load section
 @import "parts/section";
+
+// load hero
+@import "parts/hero";
 
 // load section
 @import "parts/cards";
@@ -68,8 +69,6 @@
 
 // load basket
 @import "parts/basket";
-
-
 
 .pages {
     position: fixed;

@@ -143,49 +143,29 @@
             grid-template-columns: repeat(3, 1fr);
 
             @media (max-width: 1024px) {
+                display: flex;
+                justify-content: space-between;
+
+                ._product__price {
+                    flex: 1 1 auto;
+                }
+            }
+
+            form {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                justify-content: space-between;
+
+                @media (max-width: 1024px) {
+                    flex: 1 1 auto;
+                }
+            }
+
+            @media (max-width: 1024px) {
                 ._label {
                     display: none;
                 }
-            }
-        }
-    }
-}
-
-.cart {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-
-    @media (min-width: 1025px) {
-        gap: 75%;
-        width: 24%;
-    }
-
-    @media (max-width: 1024px) {
-        grid-column: span 2;
-        justify-content: space-between;
-    }
-
-   
-
-    .add-to-basket {
-        text-align: center;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 1;
-        letter-spacing: -0.03px;
-        white-space: nowrap;
-        transition: opacity 0.3s ease 0s;
-
-        @media (max-width: 1024px) {
-            letter-spacing: normal;
-            font-size: 14px;
-        }
-
-        @media (any-hover: hover) {
-            &:hover {
-                opacity: 0.5;
             }
         }
     }

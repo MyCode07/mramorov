@@ -1,20 +1,20 @@
 [data-animate-top] {
-    transform: translate3d(0, -50px, 0);
+    transform: translate3d(0, -25px, 0);
     opacity: 0;
 }
 
 [data-animate-bottom] {
-    transform: translate3d(0, 50px, 0);
+    transform: translate3d(0, 25px, 0);
     opacity: 0;
 }
 
 [data-animate-left] {
-    transform: translate3d(-50px, 0, 0);
+    transform: translate3d(-25px, 0, 0);
     opacity: 0;
 }
 
 [data-animate-right] {
-    transform: translate3d(50px, 0, 0);
+    transform: translate3d(25px, 0, 0);
     opacity: 0;
 }
 
@@ -44,9 +44,9 @@
         top: 0;
         height: 100%;
         width: 100%;
-        background-color: #f4f0ea;
+        background-color: $black;
         z-index: 1;
-        transition: all 0.3s ease-in 0s;
+        transition: all 0.5s ease-in-out 0s;
     }
 }
 

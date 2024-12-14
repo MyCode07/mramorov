@@ -61,10 +61,6 @@ main {
         padding-inline: $padding + px;
     }
 
-    @media (max-width: 1440px) {
-        padding-inline: 15px;
-    }
-
     @media (max-width: 1024px) {
         padding-inline: 10px;
     }
@@ -627,6 +623,10 @@ button {
 
     @media (max-width: 1024px) {
         gap: 5px;
+
+        * {
+            font-weight: 300;
+        }
     }
 
     .qty-btn {

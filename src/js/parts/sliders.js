@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import {Pagination, Autoplay } from 'swiper/modules';
+import { Autoplay, Thumbs, FreeMode } from 'swiper/modules';
 
 const sliders = document.querySelectorAll('.swiper');
 if (sliders.length) {
@@ -9,32 +9,32 @@ if (sliders.length) {
         let next = section.querySelector('.next')
         let pagination = section.querySelector('.pagination')
 
-        if (slider.closest('.product-slider')) {
-            new Swiper(slider, {
-                modules: [Autoplay, Pagination],
-                slidesPerView: 1,
-                centeredSlides: true,
-                spaceBetween: 50,
-                pagination: {
-                    el: pagination,
-                    clickable: true,
-                },
+        if (slider.closest('.stones')) {
+            const thumbs = new Swiper('.swiper[thumbsSlider]', {
+                modules: [
+                    FreeMode
+                ],
+                freeMode: true,
+                watchSlidesProgress: true,
+                slidesPerView: 'auto',
+                spaceBetween: 0,
+                allowTouchMove: false,
+            });
+
+            new Swiper('.swiper.stones-slider', {
+                modules: [
+                    Thumbs, Autoplay
+                ],
                 autoplay: {
                     delay: 4000,
+                    pauseOnMouseEnter: true,
                 },
-            })
-        }
-
-        if (slider.closest('.page-about')) {
-            new Swiper(slider, {
-                modules: [Pagination],
+                spaceBetween: 0,
                 slidesPerView: 1,
-                spaceBetween: 10,
-                pagination: {
-                    el: pagination,
-                    clickable: true,
+                thumbs: {
+                    swiper: thumbs,
                 },
-            })
+            });
         }
     })
 }
