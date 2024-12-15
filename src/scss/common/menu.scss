@@ -23,6 +23,16 @@
         pointer-events: all;
     }
 
+    @media (any-hover: hover) {
+        &::-webkit-scrollbar {
+            background-color: $black;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: $white;
+        }
+    }
+
     // .menu__body
 
     &__body {

@@ -9,7 +9,7 @@ import "./parts/menu.js";
 import "./parts/tabs.js";
 import "./parts/filters.js";
 import "./parts/canvas.js";
-import { animateAction, animateImagesAction, animateStaggerAction } from "./parts/animations.js";
+import { animateAction, animateImagesAction, animateStaggerAction, animateTextAction } from "./parts/animations.js";
 
 replaceDomElements();
 stickyHeader();
@@ -18,6 +18,7 @@ playVideoAction();
 animateStaggerAction();
 animateAction();
 animateImagesAction();
+animateTextAction();
 
 
 import { Fancybox } from "@fancyapps/ui";

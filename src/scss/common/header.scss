@@ -9,8 +9,6 @@
 
     &._active,
     &._sticky {
-        background-color: $black;
-
         .header__logo {
             opacity: 1;
         }
@@ -50,9 +48,11 @@
     &__burger {
         display: flex;
         flex-direction: column;
+        justify-content: center;
         gap: 3px;
         position: relative;
         width: 50px;
+        height: 27px;
 
         @media (max-width: 768px) {
             width: 30px;

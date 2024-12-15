@@ -1,10 +1,12 @@
 import * as THREE from "three";
 
-const canvas = document.querySelector('canvas');
-if (canvas) {
+const canvas = document.querySelector('.catalog canvas');
+if (canvas && window.innerWidth > 1024) {
+    const stones = document.querySelectorAll('.catalog ul a');
 
-    const w = 650;
-    const h = 650
+    let w = window.innerWidth / 3 ?? 650;
+    let h = window.innerWidth / 3 ?? 650;
+    const scale = 3
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, w / h, 0.1, 1000);
     camera.position.z = 5;
@@ -25,21 +27,40 @@ if (canvas) {
     const detail = 12;
     const loader = new THREE.TextureLoader();
     const geometry = new THREE.IcosahedronGeometry(1, detail);
-    const material = new THREE.MeshPhongMaterial({
-        map: loader.load("img/textures/mramor.png"),
-        specularMap: loader.load("img/textures/mramor.png"),
-        bumpMap: loader.load("img/textures/mramor.png"),
-        bumpScale: 0.04,
-    });
 
-    const stoneMesh = new THREE.Mesh(geometry, material);
-    stoneGroup.add(stoneMesh);
+    let stoneMeshes = []
+    stones.forEach(item => {
+        const texture = item.dataset.texture
 
-    const scale = 3
-    stoneMesh.scale.x = scale;
-    stoneMesh.scale.y = scale;
-    stoneMesh.scale.z = scale;
+        const material = new THREE.MeshPhongMaterial({
+            map: loader.load(texture),
+            specularMap: loader.load(texture),
+            bumpMap: loader.load(texture),
+            bumpScale: 0.04,
+        });
 
+        const mesh = new THREE.Mesh(geometry, material);
+        stoneGroup.add(mesh);
+
+        mesh.scale.x = scale;
+        mesh.scale.y = scale;
+        mesh.scale.z = scale;
+
+        stoneMeshes.push(mesh);
+
+        mesh.material.transparent = true;
+        mesh.material.opacity = 0;
+
+        item.addEventListener('mouseenter', () => {
+            mesh.material.opacity = 1;
+            canvas.style.opacity = 1;
+        })
+
+        item.addEventListener('mouseleave', () => {
+            mesh.material.opacity = 0;
+            canvas.style.opacity = 0;
+        })
+    })
 
 
     const sunLight = new THREE.DirectionalLight(0xffffff, 2.0);
@@ -49,7 +70,9 @@ if (canvas) {
     function animateStones() {
         requestAnimationFrame(animateStones);
 
-        stoneMesh.rotation.y += 0.002;
+        stoneMeshes.forEach(item => {
+            item.rotation.y += 0.002;
+        })
         // glowMesh.rotation.y += 0.002;
         renderer.render(scene, camera);
     }
@@ -57,9 +80,13 @@ if (canvas) {
     animateStones();
 
     function handleWindowResize() {
-        camera.updateProjectionMatrix();
-        renderer.setSize(w, h);
+        w = window.innerWidth / 3 ?? 650;
+        h = window.innerWidth / 3 ?? 650;
 
+        camera.updateProjectionMatrix();
+        console.log(w);
+
+        renderer.setSize(w, h);
     }
     window.addEventListener('resize', handleWindowResize, false);
 }

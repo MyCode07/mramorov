@@ -13,7 +13,9 @@
         </div>
         <div class="section__container _container">
             <div class="section__body">
-                <img src="img/icons/home-hero-logo.svg" alt="">
+                <div class="hero-logo">
+                    <img src="img/icons/home-hero-logo.svg" alt="">
+                </div>
                 <button>
                     <img src="img/icons/sound.svg" alt="">
                 </button>
@@ -21,12 +23,14 @@
         </div>
     </section>
 
-    @@include('./html/parts/catalog.html')
+    @@include('./html/parts/catalog.html', {"class":"_mb0"})
 
-    <section class="section quote">
+    <section class="section quote _mb0">
         <div class="section__container _container">
             <div class="section__body">
-                <p>Мелочи <br>создают совершенство,<br>а совершенство<br>это не мелочь.</p>
+                <p class="_text-animated" data-bg-color="rgba(255,255,255,0.1)" data-fg-color="currentcolor">Мелочи
+                    <br>создают совершенство,<br>а совершенство<br>это не мелочь.
+                </p>
             </div>
         </div>
     </section>
@@ -80,13 +84,18 @@
     <section class="section red">
         <div class="section__container _container">
             <div class="section__body">
-                <p>Истинный стиль - это бесшовная интеграция креативности и функциональности, где каждая деталь служит
+                <p class="_text-animated" data-bg-color="rgba(255,0,0,0.1)" data-fg-color="currentcolor">Истинный
+                    стиль - это бесшовная интеграция креативности и функциональности, где каждая деталь служит
                     как эстетической,
                     так и практической цели.</p>
-                <video playsinline poster="img/images.png" muted loop class="_video">
-                    <source src="files/images.mp4" type="video/mp4">
-                </video>
-                <span>MMXIIi</span>
+                <div data-hidden>
+                    <video playsinline poster="img/images.png" muted loop class="_video">
+                        <source src="files/images.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <span class="_text-animated" data-bg-color="rgba(255,0,0,0.1)"
+                    data-fg-color="currentcolor">MMXIIi</span>
             </div>
         </div>
     </section>

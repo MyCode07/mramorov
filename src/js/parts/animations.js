@@ -110,13 +110,14 @@ const observerSVGStagger = new IntersectionObserver((entries, self) => {
 });
 
 function animateSVG(elem, i) {
-    gsap.to(elem, {
-        duration: 5,
-        delay: 0.3,
-        strokeDashoffset: 0,
-        ease: 'ease',
-        stagger: 0.3,
-    });
+    gsap.to(elem,
+        {
+            duration: 5,
+            delay: 0.3,
+            strokeDashoffset: 0,
+            ease: 'ease',
+            stagger: 0.3,
+        });
 }
 
 
@@ -150,4 +151,63 @@ export const animateImagesAction = () => {
             observerImagesHidden.observe(elem);
         })
     }
+}
+
+
+// text fill animations
+const aniamtedTexts = document.querySelectorAll('._text-animated');
+export const animateTextAction = () => {
+    if (aniamtedTexts.length) {
+        aniamtedTexts.forEach((char, i) => {
+
+            const bg = char.dataset.bgColor
+            const fg = char.dataset.fgColor
+
+            const text = new SplitType(char, { types: 'chars' })
+
+            gsap.fromTo(text.chars,
+                {
+                    color: bg,
+                },
+                {
+                    color: fg,
+                    duration: 0.3,
+                    stagger: 0.3,
+                    ease: 'ease',
+                    scrollTrigger: {
+                        trigger: char,
+                        start: 'top 80%',
+                        end: 'top 20%',
+                        scrub: true,
+                        toggleActions: 'play play reverse reverse',
+                    }
+                })
+        })
+    }
+}
+
+
+// animate hero logo
+
+const heroLogo = document.querySelector('.hero-logo');
+if (heroLogo) {
+
+    gsap.fromTo(heroLogo,
+        {
+            scale: 1,
+            y: 0,
+        },
+        {
+            y: -250,
+            scale: 0,
+            duration: 0.3,
+            ease: 'ease',
+            scrollTrigger: {
+                trigger: '.hero',
+                start: 'top ',
+                end: 'bottom + 20%',
+                scrub: true,
+                toggleActions: 'play play reverse reverse',
+            }
+        })
 }
