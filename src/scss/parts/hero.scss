@@ -19,6 +19,19 @@
         height: 100%;
     }
 
+    // .hero-logo
+
+    &-logo {
+        position: relative;
+        max-width: 1200px;
+        width: 100%;
+
+        img,
+        svg {
+            width: 100%;
+        }
+    }
+
     .section__body {
         height: 100%;
         display: flex;
@@ -51,3 +64,4 @@
         }
     }
 }
+

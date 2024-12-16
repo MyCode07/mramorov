@@ -34,12 +34,18 @@ body {
         }
     }
 
+    &._noscrollbar {
+        &::-webkit-scrollbar-thumb {
+            background: $black;
+        }
+    }
+
     &::-webkit-scrollbar {
         background-color: $black;
     }
 
     &::-webkit-scrollbar-thumb {
-        background-color: $white;
+        background-color: rgba($color: $white, $alpha: 0.1);
     }
 }
 

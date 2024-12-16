@@ -10,6 +10,7 @@ import "./parts/tabs.js";
 import "./parts/filters.js";
 import "./parts/canvas.js";
 import { animateAction, animateImagesAction, animateStaggerAction, animateTextAction } from "./parts/animations.js";
+import { runPrelaoder } from "./parts/loader.js";
 
 replaceDomElements();
 stickyHeader();
@@ -19,6 +20,7 @@ animateStaggerAction();
 animateAction();
 animateImagesAction();
 animateTextAction();
+runPrelaoder();
 
 
 import { Fancybox } from "@fancyapps/ui";

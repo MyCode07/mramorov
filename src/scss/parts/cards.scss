@@ -171,12 +171,27 @@
 
         display: none;
 
+        @media (any-hover: none) {
+            display: flex;
+        }
+
+        @media (max-width: 768px) {
+            width: 30px;
+            display: flex;
+            height: 30px;
+        }
+
         img,
         svg {
             width: 14px;
             height: 14px;
             flex: 0 0 auto;
             pointer-events: none;
+
+            @media (max-width: 768px) {
+                width: 10px;
+                height: 10px;
+            }
         }
     }
 

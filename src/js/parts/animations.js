@@ -194,12 +194,12 @@ if (heroLogo) {
 
     gsap.fromTo(heroLogo,
         {
-            scale: 1,
-            y: 0,
+            // scale: 1,
+            // y: 0,
         },
         {
-            y: -250,
-            scale: 0,
+            // y: -250,
+            // scale: 0,
             duration: 0.3,
             ease: 'ease',
             scrollTrigger: {
