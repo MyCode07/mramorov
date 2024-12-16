@@ -1,6 +1,6 @@
 .cart-item {
     overflow: hidden;
-    
+
     // .cart-item__top
 
     &__top {
@@ -111,6 +111,7 @@
     flex-direction: column;
     align-items: center;
     gap: 15px;
+    position: relative;
 
     @media (max-width: 1024px) {
         gap: 10px;
@@ -143,6 +144,39 @@
                     transform: scale(1.1);
                 }
             }
+        }
+    }
+
+    @media (any-hover: hover) {
+        &:hover .add-to-cart {
+            display: flex;
+        }
+    }
+
+    .add-to-cart {
+        position: absolute;
+        top: 150px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        z-index: 1;
+
+        background-color: $black;
+
+        width: 40px;
+        height: 40px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        display: none;
+
+        img,
+        svg {
+            width: 14px;
+            height: 14px;
+            flex: 0 0 auto;
+            pointer-events: none;
         }
     }
 

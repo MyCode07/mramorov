@@ -735,6 +735,16 @@
 
 .projects {
     .grid {
+        @media (min-width: 769px) {
+            & > :first-child {
+                grid-column: span 2;
+
+                .cart-item__image {
+                    padding-bottom: 50%;
+                }
+            }
+        }
+
         @media (max-width: 768px) {
             gap: 30px 10px;
             grid-template-columns: repeat(2, 1fr);

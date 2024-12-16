@@ -9,11 +9,12 @@
 
     &._active,
     &._sticky {
+        background-color: $black;
+
         .header__logo {
             opacity: 1;
         }
 
-        mix-blend-mode: difference;
         nav > ul > li {
             svg {
                 fill: currentColor;
@@ -129,4 +130,8 @@
             font-size: 10px;
         }
     }
+}
+
+body:has(.menu._open) .header {
+    background-color: transparent;
 }
