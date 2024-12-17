@@ -190,7 +190,8 @@ export const animateTextAction = () => {
 
 // animate headerlogo
 const headerLogo = document.querySelector('header .animated-logo');
-if (headerLogo) {
+// потом убрать .hero
+if (headerLogo && document.querySelector('.hero')) {
     const header = document.querySelector('header');
     const eye = headerLogo.querySelector('.eye')
     const mv = headerLogo.querySelector('.mv')
@@ -200,6 +201,11 @@ if (headerLogo) {
     let width = 325
     let top = (headerLogo.getBoundingClientRect().height - mv.getBoundingClientRect().height - st.getBoundingClientRect().height) / 4
     top = 72
+
+    if (window.innerWidth <= 1024) {
+        top = 75
+        width = 312
+    }
 
     if (window.innerWidth <= 768) {
         top = 42

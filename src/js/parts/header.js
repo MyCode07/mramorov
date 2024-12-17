@@ -1,9 +1,15 @@
 export const stickyHeader = () => {
     const header = document.querySelector('header');
     const animatedLogo = document.querySelector('.header .animated-logo');
-    if (!header || animatedLogo) return
+
+    // if (!header || animatedLogo) return
+
+    // потом убрать это
+    if (!header || document.querySelector('.hero')) return
 
     const headerheigth = header.getBoundingClientRect().height / 3;
+    console.log(headerheigth);
+
 
     const sticky = () => {
         if (window.scrollY > headerheigth) {
