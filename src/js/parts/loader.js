@@ -18,6 +18,8 @@ export const runPrelaoder = () => {
         return;
     }
 
+    const timeout = 4000;
+
 
     const perc = preloader.querySelector('.loader-percentage label');
     const timeline = gsap.timeline();
@@ -39,7 +41,7 @@ export const runPrelaoder = () => {
 
             setTimeout(() => {
                 preloader.remove();
-            }, 1000);
+            }, timeout);
         }
     })
 }

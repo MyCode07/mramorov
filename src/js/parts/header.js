@@ -1,6 +1,7 @@
 export const stickyHeader = () => {
     const header = document.querySelector('header');
-    if (!header) return
+    const animatedLogo = document.querySelector('.header .animated-logo');
+    if (!header || animatedLogo) return
 
     const headerheigth = header.getBoundingClientRect().height / 3;
 

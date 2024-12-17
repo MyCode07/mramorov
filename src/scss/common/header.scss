@@ -20,10 +20,33 @@
                 fill: currentColor;
             }
         }
+
+        .eye,
+        .st {
+            opacity: 0;
+        }
+
+        .animated-logo {
+            height: 28px;
+
+            .mv {
+                pointer-events: all;
+            }
+        }
     }
 
     &._active {
         color: $white;
+    }
+
+    &._noanimate {
+        .animated-logo {
+            display: none;
+        }
+
+        .main-logo {
+            display: block;
+        }
     }
 
     // .header__container
@@ -95,15 +118,69 @@
         justify-content: center;
         flex: 1 1 auto;
 
-        opacity: 0;
         transition: all 0.3s ease 0s;
 
         img,
         svg {
+            pointer-events: none;
+            transition: opacity 0.3s ease 0s;
+        }
+
+        .main-logo {
+            display: none;
             height: 27px;
 
             @media (max-width: 768px) {
                 height: 15px;
+            }
+        }
+
+        // .logo {
+        //     position: absolute;
+        //     top: 180px;
+        //     transform-origin: top;
+        //     max-width: 1200px;
+
+        //     @media (max-width: 1230px) {
+        //         max-width: calc(100% - 30px);
+        //     }
+
+        //     @media (max-width: 1024px) {
+        //         max-width: calc(100% - 20px);
+        //     }
+        // }
+
+        .animated-logo {
+            position: absolute;
+            top: 180px;
+            transform-origin: top;
+            max-width: 1200px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            @include adaptive-value("gap", 84, 25, 1);
+
+            @media (max-width: 1230px) {
+                max-width: calc(100% - 30px);
+            }
+
+            @media (max-width: 1024px) {
+                max-width: calc(100% - 20px);
+            }
+
+            .eye {
+                width: calc(469 * 100% / 1200);
+                margin-left: 1.8%;
+                pointer-events: none;
+            }
+            .mv {
+                pointer-events: none;
+            }
+            .st {
+                width: calc(602 * 100% / 1200);
+                margin-left: -3.5%;
+                pointer-events: none;
             }
         }
     }

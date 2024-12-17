@@ -2,6 +2,7 @@
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger.js'
 import { TextPlugin } from 'gsap/TextPlugin.js';
+import { get_scroll_percentage } from '../static/scroll-percentage.js';
 
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
@@ -187,27 +188,86 @@ export const animateTextAction = () => {
 }
 
 
-// animate hero logo
+// animate headerlogo
+const headerLogo = document.querySelector('header .animated-logo');
+if (headerLogo) {
+    const header = document.querySelector('header');
+    const eye = headerLogo.querySelector('.eye')
+    const mv = headerLogo.querySelector('.mv')
+    const st = headerLogo.querySelector('.st')
 
-const heroLogo = document.querySelector('.hero-logo');
-if (heroLogo) {
+    const tl = gsap.timeline()
+    let width = 325
+    let top = (headerLogo.getBoundingClientRect().height - mv.getBoundingClientRect().height - st.getBoundingClientRect().height) / 4
+    top = 72
 
-    gsap.fromTo(heroLogo,
+    if (window.innerWidth <= 768) {
+        top = 42
+        width = 173
+    }
+
+
+    tl.fromTo(headerLogo,
         {
-            // scale: 1,
-            // y: 0,
+            width: '1200px',
         },
         {
-            // y: -250,
-            // scale: 0,
+            width: width,
             duration: 0.3,
+            top: -top,
             ease: 'ease',
+            gap: 25,
             scrollTrigger: {
                 trigger: '.hero',
-                start: 'top ',
-                end: 'bottom + 20%',
+                start: 'top',
+                end: 'center',
                 scrub: true,
                 toggleActions: 'play play reverse reverse',
-            }
+                onLeaveBack: () => {
+                    header.classList.remove('_active')
+                }
+            },
+            onComplete: () => {
+                header.classList.add('_active')
+            },
         })
+}
+
+// data-hidden-text aniamtion
+const aniamtedHiddenText = document.querySelectorAll('[data-hidden-text]');
+export const animateHiddenTextAction = () => {
+    if (aniamtedHiddenText.length) {
+        aniamtedHiddenText.forEach(item => {
+            gsap.fromTo(item,
+                {
+                    opacity: 0,
+                    top: 50,
+                },
+                {
+                    opacity: 1,
+                    top: 0,
+                    duration: 0.3,
+                    stagger: 0.3,
+                    ease: 'ease',
+                    scrollTrigger: {
+                        trigger: item,
+                        start: 'top 80%',
+                        end: 'top 20%',
+                        scrub: true,
+                        toggleActions: 'play play reverse reverse',
+                    }
+                })
+        })
+    }
+}
+
+
+// scroll line aniamtion
+const line = document.querySelector('.line');
+export const lineAnimationAction = () => {
+    if (!line) return;
+
+    window.addEventListener('scroll', function () {
+        line.style.height = get_scroll_percentage() + '%';
+    })
 }

@@ -719,3 +719,16 @@ input[type="number"] {
 ._mb0 {
     margin-bottom: 0 !important;
 }
+
+.line {
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, 0);
+    width: 2px;
+    height: 0;
+    max-height: calc(100% - 25px);
+    background-color: $red;
+    pointer-events: none;
+}

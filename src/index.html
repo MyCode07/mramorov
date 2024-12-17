@@ -7,8 +7,6 @@
 @@include('./html/loader.html')
 
 <main>
-
-
     <section class="section hero">
         <div class="section__image">
             <img src="img/about.png" alt="">
@@ -16,7 +14,9 @@
         <div class="section__container _container">
             <div class="section__body">
                 <div class="hero-logo">
-                    <img src="img/icons/home-hero-logo.svg" alt="">
+                    <img class="eye" src="img/icons/logo/eye.svg" alt="">
+                    <img class="mv" src="img/icons/logo/mv.svg" alt="">
+                    <img class="st" src="img/icons/logo/st.svg" alt="">
                 </div>
                 <button>
                     <img src="img/icons/sound.svg" alt="">
@@ -115,7 +115,28 @@
         <div class="section__container _container">
             <div class="section__body">
                 <ol>
-                    <li class="_text-animated" data-bg-color="rgba(255,255,255,0.1)" data-fg-color="currentcolor">
+                    <li data-hidden-text>
+                        <span>Консультация</span>
+                        <p>Поможем вам подобрать материалы с учетом специфики проекта.</p>
+                    </li>
+                    <li data-hidden-text>
+                        <span>Анализ проекта</span>
+                        <p>Учитываем все детали и требования для создания точного плана.</p>
+                    </li>
+                    <li data-hidden-text>
+                        <span>Дизайн</span>
+                        <p>Разрабатываем 2D и 3D модели для визуализации будущего изделия.</p>
+                    </li>
+                    <li data-hidden-text>
+                        <span>Производство</span>
+                        <p>Выполняем точную обработку на современном оборудовании.</p>
+                    </li>
+                    <li data-hidden-text>
+                        <span>Доставка и установка</span>
+                        <p>Гарантируем бережную доставку и профессиональный монтаж готового изделия.</p>
+                    </li>
+
+                    <!-- <li class="_text-animated" data-bg-color="rgba(255,255,255,0.1)" data-fg-color="currentcolor">
                         <span>Консультация</span>
                         <p>Поможем вам подобрать материалы с учетом специфики проекта.</p>
                     </li>
@@ -134,7 +155,7 @@
                     <li class="_text-animated" data-bg-color="rgba(255,255,255,0.1)" data-fg-color="currentcolor">
                         <span>Доставка и установка</span>
                         <p>Гарантируем бережную доставку и профессиональный монтаж готового изделия.</p>
-                    </li>
+                    </li> -->
                 </ol>
             </div>
         </div>
@@ -150,8 +171,20 @@
         </div>
     </section>
 
-    @@include('./html/parts/partners.html')
+    <section class="section fullscreen callback">
+        <div class="section__container ">
+            <div class="section__body">
+                <div data-hidden>
+                    <div class="callback-image">
+                        <img src="img/hands.png" alt="">
+                    </div>
+                </div>
+                <a href="" target="_blank">свяжитесь с нами</a>
+            </div>
+        </div>
+    </section>
 
+    @@include('./html/parts/partners.html')
 </main>
 
 @@include('./html/footer.html')
