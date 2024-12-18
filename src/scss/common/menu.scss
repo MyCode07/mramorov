@@ -1,6 +1,6 @@
 .menu {
     position: fixed;
-    z-index: 5;
+    z-index: 12;
     left: 0;
     top: 0;
     width: 100%;
@@ -30,6 +30,62 @@
 
         &::-webkit-scrollbar-thumb {
             background-color: $white;
+        }
+    }
+
+    [data-bottom] {
+        top: -25px;
+        opacity: 0;
+    }
+
+    [data-opacity] {
+        opacity: 0;
+    }
+
+    // .menu__close
+
+    &__close {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 3px;
+        width: 50px;
+        height: 27px;
+
+        position: absolute;
+        left: 15px;
+        top: 25px;
+
+        @media (max-width: 1024px) {
+            top: 12px;
+            left: 10px;
+        }
+
+        @media (max-width: 768px) {
+            width: 30px;
+        }
+
+        span {
+            display: block;
+            width: 50px;
+            height: 2px;
+            background-color: $white;
+            transition: all 0.3s ease 0s;
+            position: absolute;
+            left: 0;
+            top: 50%;
+
+            @media (max-width: 768px) {
+                width: 30px;
+            }
+        }
+
+        & > :first-child {
+            transform: translate(0, -50%) rotate(45deg);
+        }
+
+        & > :last-child {
+            transform: translate(0, -50%) rotate(-45deg);
         }
     }
 

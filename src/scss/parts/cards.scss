@@ -106,6 +106,14 @@
     }
 }
 
+.news-item {
+    &:first-child p {
+        @media (min-width: 769px) {
+            max-width: 40%;
+        }
+    }
+}
+
 .product-card {
     display: flex;
     flex-direction: column;

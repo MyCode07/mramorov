@@ -4,22 +4,50 @@ import { gsap } from 'gsap'
 
 
 const burger = document.querySelector('.header__burger');
-const header = document.querySelector('.header');
 const menu = document.querySelector('.menu');
+const menuClose = document.querySelector('.menu__close');
 
 if (burger) {
+    const tl = gsap.timeline()
+
+
+
     burger.addEventListener('click', (e) => {
-        burger.classList.toggle('_active');
-        header.classList.toggle('_active');
         menu.classList.toggle('_open');
-        document.body.classList.toggle('_noscroll');
+        lockPadding();
 
-        if (menu.classList.contains('_open')) {
-            lockPadding();
-        }
-        else {
-            unLockPadding();
-        }
+        tl.to('.menu [data-bottom]',
+            {
+                delay: 0.3,
+                stagger: 0.05,
+                opacity: 1,
+                top: 0,
+                duration: 0.2,
+                ease: 'ease',
+            }).to('.menu [data-opacity]',
+                {
+                    opacity: 1,
+                    duration: 0.2,
+                    ease: 'ease',
+                })
+    })
 
+    menuClose.addEventListener('click', (e) => {
+        menu.classList.toggle('_open');
+        unLockPadding();
+
+        tl.to('.menu [data-bottom]',
+            {
+                opacity: 0,
+                stagger: 0.05,
+                top: -25,
+                duration: 0.2,
+                ease: 'ease',
+            }).to('.menu [data-opacity]',
+                {
+                    opacity: 0,
+                    duration: 0.2,
+                    ease: 'ease',
+                })
     })
 }

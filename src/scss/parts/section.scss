@@ -529,13 +529,11 @@
     }
 }
 
-.stones {
-    .section__body {
-        @media (max-width: 1024px) {
-            padding-top: 170px;
-        }
-    }
+body:has(.stones) .catalog ._btn {
+    display: none;
+}
 
+.stones {
     // .stones-slider
 
     &-slider {
@@ -808,6 +806,36 @@
     }
 }
 
+.single-project {
+    ._text-description {
+        padding-bottom: 15px;
+    }
+
+    ._text-description__body {
+        max-height: unset;
+    }
+
+    .section__img:not(._no-aspect-ratio) {
+        aspect-ratio: unset;
+        padding-bottom: 50%;
+        position: relative;
+
+        @media (max-width: 768px) {
+            padding-bottom: 100%;
+        }
+
+        img,
+        picture {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
 .projects {
     .grid {
         @media (min-width: 769px) {
@@ -862,6 +890,7 @@
 
 .about-quote {
     padding-top: 200px;
+    
 
     @media (max-width: 1024px) {
         padding-top: 170px;
