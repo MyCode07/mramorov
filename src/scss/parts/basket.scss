@@ -30,7 +30,8 @@
         }
     }
 
-    .breadcrumb {
+    .breadcrumb,
+    .aioseo-breadcrumbs {
         justify-content: center;
         margin-inline: auto;
     }
@@ -169,10 +170,6 @@
         // .basket__order-total
 
         &-total {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
             @include adaptive-value("font-size", 24, 18, 1);
             font-style: normal;
             font-weight: 400;
@@ -182,8 +179,11 @@
 
             border-bottom: 1px solid rgba($color: $red, $alpha: 0.25);
 
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
             .filter-fast {
-                width: fit-content;
+                text-align: center;
             }
 
             p {
@@ -191,7 +191,18 @@
                 display: flex;
                 align-items: center;
                 gap: 3px;
+                justify-content: center;
             }
+        }
+    }
+
+    // .basket-empty
+
+    &-empty {
+        .breadcrumb,
+        .aioseo-breadcrumbs {
+            justify-content: center;
+            margin-inline: auto;
         }
     }
 }

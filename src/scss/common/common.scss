@@ -194,8 +194,8 @@ p {
 
     li {
         color: $black;
-        font-size: 12px;
         font-weight: 300;
+        @include adaptive-value("font-size", 14, 12, 1);
 
         display: flex;
         align-items: center;
@@ -225,7 +225,6 @@ p {
 
         span {
             white-space: nowrap;
-            @include adaptive-value("font-size", 14, 12, 1);
         }
 
         @media (any-hover: hover) {
@@ -233,6 +232,55 @@ p {
                 a {
                     color: $black;
                 }
+            }
+        }
+    }
+
+    .aioseo {
+        // .aioseo-breadcrumbs
+
+        &-breadcrumbs {
+            color: $black;
+            @include adaptive-value("font-size", 14, 12, 1);
+            font-weight: 300;
+
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            @media (max-width: 1024px) {
+                overflow-x: auto;
+                width: 100vw;
+                padding-inline: 10px;
+                margin-left: -10px;
+            }
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            a {
+                transition: all 0.3s ease 0s;
+
+                @media (any-hover: hover) {
+                    &:hover {
+                        opacity: 0.5;
+                    }
+                }
+            }
+        }
+
+        // .aioseo-breadcrumb
+
+        &-breadcrumb {
+            &:last-child {
+                opacity: 0.5;
+            }
+
+            // .aioseo-breadcrumb-separator
+
+            &-separator {
+                font-size: 0.5em;
             }
         }
     }
@@ -249,6 +297,18 @@ p {
             @media (any-hover: hover) {
                 &:hover {
                     a {
+                        color: $white;
+                    }
+                }
+            }
+        }
+
+        .aioseo-breadcrumbs {
+            color: $white;
+
+            a {
+                @media (any-hover: hover) {
+                    &:hover {
                         color: $white;
                     }
                 }

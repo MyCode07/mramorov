@@ -1,5 +1,6 @@
 .product {
-    .breadcrumb {
+    .breadcrumb,
+    .aioseo-breadcrumbs {
         @media (min-width: 1025px) {
             justify-content: center;
         }
@@ -76,7 +77,6 @@
         margin-bottom: 30px;
 
         font-weight: 300;
-        gap: 15px;
 
         @media (max-width: 1024px) {
             margin-bottom: 15px;
@@ -87,9 +87,31 @@
             & > :nth-child(3) {
                 padding-right: 7.5px;
             }
+        }
 
-            & > :nth-child(4) {
-                padding-left: 7.5px;
+        li {
+            flex: 0 0 auto;
+
+            &:first-child,
+            &:nth-child(2) {
+                width: 19%;
+            }
+
+            &:nth-child(3) {
+                width: 12%;
+                text-align: right;
+            }
+
+            &:nth-child(4) {
+                text-align: center;
+                flex: 1 1 auto;
+            }
+
+            &:nth-child(5) {
+                text-align: right;
+            }
+
+            &:nth-child(5) {
             }
         }
     }
@@ -138,7 +160,20 @@
             ._label,
             ._product__price {
                 @media (min-width: 1025px) {
-                    width: 100%;
+                    flex: 0 0 auto;
+                    width: 38%;
+                }
+            }
+
+            .filter-fast {
+                @media (min-width: 1025px) {
+                    width: 24%;
+                }
+            }
+
+            ._product__price {
+                @media (min-width: 1025px) {
+                    justify-content: flex-start;
                 }
             }
 

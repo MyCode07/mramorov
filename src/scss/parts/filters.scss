@@ -9,13 +9,19 @@
         grid-template-columns: repeat(2, 1fr);
         margin-bottom: 15px;
     }
+
+    .filter-sort,
+    .filter-currency {
+        @media (min-width: 769px) {
+            width: 15%;
+        }
+    }
 }
 
 .filter {
     // .filter-fast
 
     &-fast {
-        width: 100%;
         font-weight: 300;
     }
 
@@ -75,7 +81,8 @@
             gap: 0;
             margin-top: 5px;
 
-            label {
+            label,
+            a {
                 width: 100%;
                 background-color: $black;
             }
@@ -98,6 +105,7 @@
             opacity: 0.3;
             transition: opacity 0.3s ease 0s;
             flex: 0 0 auto;
+            padding: 0 !important;
 
             @media (any-hover: hover) {
                 &:hover {
@@ -153,25 +161,20 @@
             justify-content: flex-end;
         }
 
-        a {
+        a,
+        [data-currency] {
+            cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 15px;
-            height: 14px;
+            width: 17px;
+            height: 17px;
             transition: opacity 0.3s ease 0s;
-
-            &:nth-child(2) {
-                height: 16px;
-            }
+            padding: 0 !important;
 
             @media (max-width: 1024px) {
                 width: 14px;
-                height: 13px;
-
-                &:nth-child(2) {
-                    height: 15px;
-                }
+                height: 14px;
             }
 
             &._active {
@@ -190,6 +193,7 @@
                 width: 100%;
                 height: 100%;
                 object-fit: contain;
+                flex: 0 0 auto;
             }
         }
     }
@@ -207,7 +211,8 @@
             gap: 10px;
         }
 
-        label {
+        label,
+        a {
             cursor: pointer;
             padding: 10px;
             white-space: nowrap;
