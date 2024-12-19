@@ -16,6 +16,17 @@ if (burger) {
         menu.classList.toggle('_open');
         lockPadding();
 
+
+        gsap.to('.menu',
+            {
+                height: '100%',
+                duration: 0.3,
+                ease: 'ease',
+                onComplete: () => {
+                    menu.style.overflowY = 'auto'
+                }
+            })
+
         tl.to('.menu [data-bottom]',
             {
                 delay: 0.3,
@@ -35,6 +46,13 @@ if (burger) {
     menuClose.addEventListener('click', (e) => {
         menu.classList.toggle('_open');
         unLockPadding();
+        menu.style.overflowY = 'unset'
+
+        gsap.to('.menu', {
+            height: 0,
+            duration: 0.3,
+            ease: 'ease',
+        })
 
         tl.to('.menu [data-bottom]',
             {

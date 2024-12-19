@@ -8,18 +8,15 @@
     background: rgba($color: $black, $alpha: 0.75);
     backdrop-filter: blur(10px);
     overflow: hidden;
-    overflow-y: auto;
-    transform: translate(0, -150%);
-
+    height: 0;
     pointer-events: none;
-    transition: transform 1.2s cubic-bezier(0.16, 1.08, 0.38, 0.98);
+    // transition: transform 1.2s cubic-bezier(0.16, 1.08, 0.38, 0.98);
 
     * {
         color: $white;
     }
 
     &._open {
-        transform: translate(0, 0);
         pointer-events: all;
     }
 
