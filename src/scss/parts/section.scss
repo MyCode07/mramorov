@@ -123,6 +123,10 @@
         margin-bottom: 0 !important;
         height: 100vh !important;
 
+        @media (max-width: 768px) {
+            height: 90vh !important;
+        }
+
         .section__body {
             display: flex;
             flex-direction: column;
@@ -218,9 +222,6 @@
         span {
             position: relative;
             top: 2px;
-            @media (max-width: 768px) {
-                font-size: 12px;
-            }
         }
 
         @media (max-width: 1024px) {
@@ -459,11 +460,12 @@
 }
 
 .callback {
+    z-index: 0;
+    margin-bottom: 0 !important;
+
     // .callback-image
 
     &-image {
-        position: relative;
-
         &:before {
             position: absolute;
             content: "";
@@ -483,7 +485,9 @@
         max-height: 1000px;
     }
 
-    a {
+    // .callback-btn
+
+    &-btn {
         width: fit-content;
         display: block;
         @include adaptive-value("font-size", 40, 20, 1);
@@ -538,6 +542,10 @@
         .swiper-slide {
             position: relative;
             height: 100vh;
+
+            @media (max-width: 768px) {
+                height: 90vh;
+            }
 
             &.swiper-slide-active {
                 .stones-content {

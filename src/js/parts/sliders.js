@@ -18,7 +18,6 @@ if (sliders.length) {
                 watchSlidesProgress: true,
                 slidesPerView: 'auto',
                 spaceBetween: 0,
-                allowTouchMove: false,
             });
 
             new Swiper('.swiper.stones-slider', {

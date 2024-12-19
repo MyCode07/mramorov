@@ -5,9 +5,10 @@
 
     &__top {
         display: flex;
-        align-items: center;
+        align-items: flex-end;
         justify-content: space-between;
         width: 100%;
+        gap: 15px;
 
         font-size: 16px;
         font-weight: 400;
@@ -31,11 +32,6 @@
         }
 
         span {
-            font-size: 14px;
-
-            @media (max-width: 1024px) {
-                font-size: 12px;
-            }
         }
     }
 
