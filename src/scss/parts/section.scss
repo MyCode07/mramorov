@@ -70,7 +70,7 @@
 
     &.pages-hero {
         margin-bottom: 0 !important;
-        height: 650px;
+        height: 550px;
         position: relative;
 
         .section__container,
@@ -195,6 +195,16 @@
             height: 100%;
             object-fit: cover;
             pointer-events: none;
+        }
+
+        h1 {
+            text-align: center;
+            @include adaptive-value("font-size", 32, 20, 1);
+            font-weight: 300;
+
+            span {
+                display: none;
+            }
         }
     }
 
@@ -889,10 +899,16 @@ body:has(.stones) .catalog ._btn {
 
     ._text-description {
         padding: 0;
+        width: 100%;
+        flex: 0 0 auto;
     }
 
     ._text-description__body {
         max-height: fit-content;
+
+        @media (min-width: 769px) {
+            margin-inline: auto;
+        }
     }
 
     // .single-news__title
@@ -902,13 +918,41 @@ body:has(.stones) .catalog ._btn {
             margin-top: 1em;
         }
     }
+
+    .section__body {
+    }
+
+    .grid {
+        @media (max-width: 768px) {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+    }
+
+    .images {
+        flex: 0 0 auto;
+
+        a {
+            display: block;
+        }
+
+        & > :not(:last-child) {
+            margin-bottom: 15px;
+
+            @media (max-width: 768px) {
+                margin-bottom: 10px;
+            }
+        }
+    }
 }
 
 .about-quote {
     padding-top: 200px;
+    padding-bottom: 200px;
 
     @media (max-width: 1024px) {
         padding-top: 170px;
+        padding-bottom: 170px;
     }
 
     @media (max-width: 768px) {
@@ -1201,9 +1245,18 @@ body:has(.stones) .catalog ._btn {
         gap: 15px;
 
         @media (max-width: 1024px) {
-            flex-direction: column;
             gap: 30px;
         }
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            gap: 100px;
+        }
+    }
+
+    h1,
+    .h1 {
+        @include adaptive-value("font-size", 28, 18, 1);
     }
 
     .tabs {
@@ -1274,6 +1327,16 @@ body:has(.stones) .catalog ._btn {
 
     ._text-description__body {
         max-height: fit-content;
+        margin-inline: auto;
+
+        @media (max-width: 1024px) {
+            margin-inline: unset;
+        }
+    }
+
+    .pages-hero__title,
+    .breadcrumbs {
+        display: none;
     }
 }
 

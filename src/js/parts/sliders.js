@@ -25,8 +25,8 @@ if (sliders.length) {
                     Thumbs, Autoplay
                 ],
                 autoplay: {
-                    delay: 4000,
-                    pauseOnMouseEnter: true,
+                    delay: 5000,
+                    pauseOnMouseEnter: true
                 },
                 spaceBetween: 0,
                 slidesPerView: 1,

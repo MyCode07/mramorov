@@ -52,8 +52,10 @@ if (canvas && window.innerWidth > 1024) {
         mesh.material.opacity = 0;
 
         item.addEventListener('mouseenter', () => {
-            mesh.material.opacity = 1;
-            canvas.style.opacity = 1;
+            setTimeout(() => {
+                mesh.material.opacity = 1;
+                canvas.style.opacity = 1;
+            }, 500);
         })
 
         item.addEventListener('mouseleave', () => {

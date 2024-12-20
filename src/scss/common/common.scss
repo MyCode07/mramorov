@@ -33,20 +33,6 @@ body {
             background-repeat: no-repeat;
         }
     }
-
-    &._noscrollbar {
-        &::-webkit-scrollbar-thumb {
-            background: $black;
-        }
-    }
-
-    &::-webkit-scrollbar {
-        background-color: $black;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        background-color: rgba($color: $white, $alpha: 0.1);
-    }
 }
 
 .wrapper {
@@ -63,6 +49,8 @@ body {
 main {
     position: relative;
     flex: 1 1 auto;
+
+    @include adaptive-value("min-height", 600, 275, 1);
 }
 
 ._container {
@@ -113,7 +101,6 @@ p {
 ._btn {
     display: flex;
     justify-content: center;
-    margin-top: 60px;
     color: $white;
     font-size: 18px;
     line-height: 100%;
@@ -128,9 +115,11 @@ p {
         }
     }
 
+    margin-top: 80px;
+
     @media (max-width: 1024px) {
         font-size: 16px;
-        margin-top: 30px;
+        margin-top: 40px;
         letter-spacing: normal;
     }
 
@@ -797,4 +786,6 @@ input[type="number"] {
     max-height: calc(100% - 25px);
     background-color: $red;
     pointer-events: none;
+
+    transition: all 0.9s ease-in-out 0s;
 }

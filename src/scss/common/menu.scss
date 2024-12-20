@@ -20,16 +20,6 @@
         pointer-events: all;
     }
 
-    @media (any-hover: hover) {
-        &::-webkit-scrollbar {
-            background-color: $black;
-        }
-
-        &::-webkit-scrollbar-thumb {
-            background-color: $white;
-        }
-    }
-
     [data-bottom] {
         top: -25px;
         opacity: 0;
@@ -105,6 +95,7 @@
 
     nav {
         padding: 45px 0;
+
         ul {
             display: flex;
             flex-direction: column;
@@ -188,6 +179,13 @@
         // .menu__bottom-navigation
 
         &-navigation {
+            span {
+                @include adaptive-value("font-size", 16, 14, 1);
+            }
+
+            a {
+                @include adaptive-value("font-size", 20, 16, 1);
+            }
         }
 
         // .menu__bottom-contacts
@@ -228,6 +226,14 @@
         // .menu__bottom-services
 
         &-services {
+            span {
+                @include adaptive-value("font-size", 16, 14, 1);
+            }
+
+            a {
+                @include adaptive-value("font-size", 20, 16, 1);
+            }
+
             @media (min-width: 769px) {
                 align-items: flex-end;
                 a {

@@ -197,10 +197,11 @@ if (headerLogo && document.querySelector('.hero')) {
     const mv = headerLogo.querySelector('.mv')
     const st = headerLogo.querySelector('.st')
 
+    headerLogo.style.top = (window.innerHeight / 2 - (headerLogo.getBoundingClientRect().height * 1.15) / 2) + 'px'
+
     const tl = gsap.timeline()
     let width = 325
-    let top = (headerLogo.getBoundingClientRect().height - mv.getBoundingClientRect().height - st.getBoundingClientRect().height) / 4
-    top = 72
+    let top = 72
 
     if (window.innerWidth <= 1024) {
         top = 75

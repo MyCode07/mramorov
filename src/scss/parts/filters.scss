@@ -171,6 +171,7 @@
             height: 17px;
             transition: opacity 0.3s ease 0s;
             padding: 0 !important;
+            opacity: 0.3;
 
             @media (max-width: 1024px) {
                 width: 14px;
@@ -178,7 +179,7 @@
             }
 
             &._active {
-                opacity: 0.3;
+                opacity: 1;
             }
 
             @media (any-hover: hover) {

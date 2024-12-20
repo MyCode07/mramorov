@@ -6,10 +6,11 @@
     z-index: 10;
     transition: background-color 0.3s ease 0s;
     color: $white;
+    mix-blend-mode: difference;
 
     &._active,
     &._sticky {
-        background-color: $black;
+        // background-color: $black;
 
         .header__logo {
             opacity: 1;
@@ -39,6 +40,10 @@
         color: $white;
     }
 
+    &:not(._active) {
+        pointer-events: none;
+    }
+
     &._noanimate {
         .animated-logo {
             display: none;
@@ -46,6 +51,68 @@
 
         .main-logo {
             display: block;
+        }
+    }
+
+    // .header__logo
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1 1 auto;
+
+        transition: all 0.3s ease 0s;
+
+        img,
+        svg {
+            pointer-events: none;
+            transition: opacity 0.3s ease 0s;
+        }
+
+        .main-logo {
+            display: none;
+            height: 27px;
+
+            @media (max-width: 768px) {
+                height: 15px;
+            }
+        }
+
+        .animated-logo {
+            position: absolute;
+            top: 180px;
+            transform-origin: top;
+            max-width: 1200px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            @include adaptive-value("gap", 84, 25, 1);
+            margin-left: -7px;
+
+            @media (max-width: 1440px) {
+                max-width: 72%;
+                @include adaptive-value("gap", 65, 25, 1);
+            }
+
+            @media (max-width: 1024px) {
+                max-width: calc(100% - 20px);
+            }
+
+            .eye {
+                width: calc(469 * 100% / 1200);
+                margin-left: 1.8%;
+                pointer-events: none;
+            }
+            .mv {
+                pointer-events: none;
+            }
+            .st {
+                width: calc(602 * 100% / 1200);
+                margin-left: -3.5%;
+                pointer-events: none;
+            }
         }
     }
 
@@ -106,81 +173,6 @@
 
             & > :last-child {
                 transform: translate(0, -50%) rotate(-45deg);
-            }
-        }
-    }
-
-    // .header__logo
-
-    &__logo {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex: 1 1 auto;
-
-        transition: all 0.3s ease 0s;
-
-        img,
-        svg {
-            pointer-events: none;
-            transition: opacity 0.3s ease 0s;
-        }
-
-        .main-logo {
-            display: none;
-            height: 27px;
-
-            @media (max-width: 768px) {
-                height: 15px;
-            }
-        }
-
-        // .logo {
-        //     position: absolute;
-        //     top: 180px;
-        //     transform-origin: top;
-        //     max-width: 1200px;
-
-        //     @media (max-width: 1230px) {
-        //         max-width: calc(100% - 30px);
-        //     }
-
-        //     @media (max-width: 1024px) {
-        //         max-width: calc(100% - 20px);
-        //     }
-        // }
-
-        .animated-logo {
-            position: absolute;
-            top: 180px;
-            transform-origin: top;
-            max-width: 1200px;
-
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            @include adaptive-value("gap", 84, 25, 1);
-
-            @media (max-width: 1230px) {
-                max-width: calc(100% - 30px);
-            }
-
-            @media (max-width: 1024px) {
-                max-width: calc(100% - 20px);
-            }
-
-            .eye {
-                width: calc(469 * 100% / 1200);
-                margin-left: 1.8%;
-                pointer-events: none;
-            }
-            .mv {
-                pointer-events: none;
-            }
-            .st {
-                width: calc(602 * 100% / 1200);
-                margin-left: -3.5%;
-                pointer-events: none;
             }
         }
     }

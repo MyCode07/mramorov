@@ -1,47 +1,26 @@
 import { gsap } from "gsap";
 
 const preloader = document.querySelector('.loader');
-const heroImage = document.querySelector('.hero__bgi');
-
-// let interval = setInterval(() => {
-//     const isLoaded = heroImage.complete && heroImage.naturalHeight !== 0;
-//     if (isLoaded == true) {
-//         runPrelaoder()
-//         clearInterval(interval)
-//     }
-// }, 16);
-
-
-
 export const runPrelaoder = () => {
     if (!preloader) {
         return;
     }
-
-    const timeout = 4000;
-
-
-    const perc = preloader.querySelector('.loader-percentage label');
     const timeline = gsap.timeline();
 
-    timeline.to(perc, {
-        duration: 1,
-        onUpdate: function () {
-            perc.textContent = Math.round(this.progress() * 100)
-        },
-        onComplete: () => {
-        }
+    timeline.to(preloader.querySelectorAll('span'), {
+        delay: 1,
+        opacity: 1,
+        duration: 0.5,
+        stagger: 0.2,
     }).to(preloader, {
+        delay: 1,
         opacity: 0,
         duration: 0.5,
-        pointerEvents: 'none',
-        delay: 1,
         onComplete: () => {
             document.body.classList.remove('_noscrollbar')
-
             setTimeout(() => {
                 preloader.remove();
-            }, timeout);
+            }, 1000);
         }
     })
 }

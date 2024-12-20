@@ -9,24 +9,24 @@
         @media (max-width: 1024px) {
             gap: 100px;
         }
+    }
 
-        .grid {
-            flex: 1 1 auto;
-            gap: 60px 45px;
-            width: 100%;
-            height: fit-content;
+    .grid {
+        flex: 1 1 auto;
+        gap: 80px;
+        width: 100%;
+        height: fit-content;
 
-            @media (min-width: 1441px) {
-                min-width: 975px;
-            }
+        @media (min-width: 1441px) {
+            min-width: 975px;
+        }
 
-            @media (max-width: 1440px) {
-                gap: 45px 30px;
-            }
+        @media (max-width: 1024px) {
+            gap: 60px;
+        }
 
-            @media (max-width: 768px) {
-                gap: 30px;
-            }
+        @media (max-width: 768px) {
+            gap: 45px;
         }
     }
 
@@ -50,6 +50,7 @@
         // .basket__product-image
 
         &-image {
+            display: block;
             position: relative;
             padding-bottom: 50%;
 

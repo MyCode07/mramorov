@@ -8,7 +8,6 @@ export const stickyHeader = () => {
     if (!header || document.querySelector('.hero')) return
 
     const headerheigth = header.getBoundingClientRect().height / 3;
-    console.log(headerheigth);
 
 
     const sticky = () => {

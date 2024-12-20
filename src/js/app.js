@@ -3,6 +3,7 @@ import { replaceDomElements } from "./static/replace.js";
 import { stickyHeader } from "./parts/header.js";
 import { playVideoAction } from "./parts/video.js";
 
+import "./parts/qty.js";
 import "./parts/sliders.js";
 import "./parts/popup.js";
 import "./parts/menu.js";

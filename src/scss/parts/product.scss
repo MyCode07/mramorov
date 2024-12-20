@@ -1,4 +1,12 @@
 .product {
+    .breadcrumb {
+        margin-bottom: 60px;
+
+        @media (max-width: 1024px) {
+            margin-bottom: 30px;
+        }
+    }
+
     .breadcrumb,
     .aioseo-breadcrumbs {
         @media (min-width: 1025px) {
@@ -24,7 +32,7 @@
         span {
             @include adaptive-value("font-size", 50, 18, 1);
             font-style: normal;
-            font-weight: 400;
+            font-weight: 300;
             line-height: 1;
             letter-spacing: -0.03px;
             text-transform: uppercase;
@@ -36,6 +44,8 @@
 
         span {
             opacity: 0.5;
+            display: block;
+            margin-top: 0.25em;
         }
     }
 
@@ -202,7 +212,7 @@
                 }
             }
 
-            form {
+            .add-to-cart__block {
                 display: flex;
                 align-items: center;
                 gap: 30px;

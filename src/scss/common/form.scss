@@ -71,10 +71,11 @@
         margin-top: 45px;
         position: relative;
         display: flex;
+        flex-direction: column-reverse;
+
         gap: 15px;
 
         @media (max-width: 1440px) {
-            flex-direction: column-reverse;
             gap: 10px;
         }
 

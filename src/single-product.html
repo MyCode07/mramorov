@@ -18,7 +18,7 @@
         </div>
     </section>
 
-    <section class="section product">
+    <section class="section product" data-product>
         <div class="section__container _container">
             <div class="section__body">
                 <div class="breadcrumbs breadcrumbs-white">
@@ -83,21 +83,22 @@
                     <div class="product__actions-right">
                         <label class="_label">Стоимость за Слэб: </label>
                         <p class="_product__price">От<span>700</span><label>€</label></p>
-                        <form>
-
+                        <div class="add-to-cart__block">
                             <div class="quantity pro-qty">
                                 <span class="qty-btn minus">
                                     <img src="img/icons/minus.svg" alt="">
                                 </span>
-                                <input type="number" class="input-text qty " data-step="1" data-min="1" data-max=""
-                                    name="quantity" value="1" title="Qty" placeholder="">
+                                <input type="number" class="input-text qty " step="1" min="1" max="100" name="quantity"
+                                    value="1" title="Qty" placeholder="">
                                 <span class="qty-btn plus">
                                     <img src="img/icons/plus.svg" alt="">
                                 </span>
                             </div>
-                            <button type="submit" class="add-to-basket">
-                                <div>Добавить в корзину</div>
-                            </button>
+                            <button type="submit" class="add-to-cart">Добавить в корзину</button>
+                        </div>
+                        <form action="#" method="post" hidden="">
+                            <input type="hidden" name="product_id" value="5904">
+                            <input type="hidden" name="quantity" value="1">
                         </form>
                     </div>
 
