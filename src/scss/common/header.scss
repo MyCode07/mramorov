@@ -6,11 +6,11 @@
     z-index: 10;
     transition: background-color 0.3s ease 0s;
     color: $white;
-    mix-blend-mode: difference;
 
     &._active,
     &._sticky {
         // background-color: $black;
+        mix-blend-mode: difference;
 
         .header__logo {
             opacity: 1;
@@ -38,10 +38,6 @@
 
     &._active {
         color: $white;
-    }
-
-    &:not(._active) {
-        pointer-events: none;
     }
 
     &._noanimate {
@@ -98,6 +94,7 @@
 
             @media (max-width: 1024px) {
                 max-width: calc(100% - 20px);
+                margin-left: 0;
             }
 
             .eye {

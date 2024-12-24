@@ -123,6 +123,15 @@
         }
     }
 
+    // .menu__search
+
+    &__search {
+        margin-bottom: 45px;
+        width: 100%;
+        max-width: 360px;
+        margin-inline: auto;
+    }
+
     // .menu__bottom
 
     &__bottom {

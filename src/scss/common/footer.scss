@@ -2,7 +2,6 @@
     position: relative;
     padding-top: 120px;
     padding-bottom: 15px;
-    z-index: 1;
 
     @media (max-width: 1024px) {
         padding-top: 60px;
@@ -166,7 +165,7 @@
         display: block;
         margin-top: 100px;
         margin-bottom: 160px;
-        @include adaptive-value("height", 218, 160, 1);
+        @include adaptive-value("width", 455, 138, 1);
 
         @media (max-width: 1024px) {
             margin-bottom: 100px;

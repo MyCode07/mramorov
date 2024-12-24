@@ -35,6 +35,34 @@ if (sliders.length) {
                 },
             });
         }
+
+        if (slider.closest('.projects')) {
+            new Swiper(slider, {
+                modules: [
+                    Autoplay
+                ],
+                autoplay: {
+                    delay: 5000,
+                    pauseOnMouseEnter: true
+                },
+                slidesPerView: 3,
+                initialSlide: 1,
+                breakpoints: {
+                    300: {
+                        spaceBetween: 10,
+                        slidesPerView: 1,
+                    },
+                    600: {
+                        spaceBetween: 10,
+                        slidesPerView: 2,
+                    },
+                    1025: {
+                        spaceBetween: 15,
+                        slidesPerView: 3,
+                    }
+                }
+            });
+        }
     })
 }
 

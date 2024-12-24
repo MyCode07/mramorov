@@ -1,4 +1,6 @@
 import * as THREE from "three";
+import { gsap } from 'gsap'
+
 
 const canvas = document.querySelector('.catalog canvas');
 if (canvas && window.innerWidth > 1024) {
@@ -19,7 +21,8 @@ if (canvas && window.innerWidth > 1024) {
     // THREE.ColorManagement.enabled = true;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.outputColorSpace = THREE.LinearSRGBColorSpace;
-
+    renderer.setClearColor(0xffffff, 0);
+    
     const stoneGroup = new THREE.Group();
     stoneGroup.rotation.z = -23.4 * Math.PI / 180;
     scene.add(stoneGroup);
@@ -51,16 +54,21 @@ if (canvas && window.innerWidth > 1024) {
         mesh.material.transparent = true;
         mesh.material.opacity = 0;
 
+
         item.addEventListener('mouseenter', () => {
-            setTimeout(() => {
-                mesh.material.opacity = 1;
-                canvas.style.opacity = 1;
-            }, 500);
+            canvas.style.opacity = 1;
+
+            gsap.to(mesh.material, {
+                opacity: 1,
+            })
         })
 
         item.addEventListener('mouseleave', () => {
-            mesh.material.opacity = 0;
             canvas.style.opacity = 0;
+
+            gsap.to(mesh.material, {
+                opacity: 0,
+            })
         })
     })
 

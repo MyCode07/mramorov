@@ -222,7 +222,7 @@ if (headerLogo && document.querySelector('.hero')) {
             width: width,
             duration: 0.3,
             top: -top,
-            ease: 'ease',
+            ease: 'linear',
             gap: 25,
             scrollTrigger: {
                 trigger: '.hero',
@@ -271,10 +271,56 @@ export const animateHiddenTextAction = () => {
 
 // scroll line aniamtion
 const line = document.querySelector('.line');
+let percentage = get_scroll_percentage();
+
 export const lineAnimationAction = () => {
     if (!line) return;
 
+
     window.addEventListener('scroll', function () {
-        line.style.height = get_scroll_percentage() + '%';
+        percentage = get_scroll_percentage();
+
+        bodyScroll();
     })
+}
+
+
+
+gsap.to(line,
+    {
+        height: '100%',
+        duration: 100,
+        ease: 'linear'
+    }
+)
+
+let scrollTimer = -1;
+function bodyScroll() {
+    if (scrollTimer != -1) {
+        clearTimeout(scrollTimer);
+    }
+    scrollTimer = window.setTimeout(scrollFinished, 500);
+}
+
+function scrollFinished() {
+    gsap.to(line,
+        {
+            height: percentage + '%',
+            duration: 1,
+            delay: 0.5,
+            ease: 'linear',
+            onComplete: () => {
+                gsap.fromTo(line,
+                    {
+                        height: line.style.height,
+                    },
+                    {
+                        height: '100%',
+                        duration: 100,
+                        ease: 'linear'
+                    }
+                )
+            }
+        }
+    )
 }
