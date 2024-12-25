@@ -10,7 +10,9 @@ import "./parts/popup.js";
 import "./parts/menu.js";
 import "./parts/tabs.js";
 import "./parts/filters.js";
-import "./parts/canvas.js";
+import "./parts/audio.js";
+import "./parts/stones.js";
+// import "./parts/canvas.js";
 import { animateAction, animateImagesAction, animateStaggerAction, animateHiddenTextAction, animateTextAction, lineAnimationAction } from "./parts/animations.js";
 import { runPrelaoder } from "./parts/loader.js";
 
@@ -31,13 +33,14 @@ import { Fancybox } from "@fancyapps/ui";
 Fancybox.bind("[data-fancybox]", {
 });
 
+
+
+
+
 document.addEventListener('click', function (e) {
+
     let targetEl = e.target;
     if (targetEl.classList.contains('pages-close')) {
         document.querySelector('.pages').classList.toggle('_hide');
     }
 })
-
-
-// https://codepen.io/glivera/pen/zoMMGO?css-preprocessor=none
-// https://frontend.horse/articles/amazing-animation-techniques-with-gsap/

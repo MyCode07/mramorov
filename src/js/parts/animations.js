@@ -191,13 +191,17 @@ export const animateTextAction = () => {
 // animate headerlogo
 const headerLogo = document.querySelector('header .animated-logo');
 // потом убрать .hero
-if (headerLogo && document.querySelector('.hero')) {
+if (headerLogo && document.querySelector('.hero') && window.innerWidth > 1024) {
     const header = document.querySelector('header');
     const eye = headerLogo.querySelector('.eye')
     const mv = headerLogo.querySelector('.mv')
     const st = headerLogo.querySelector('.st')
 
-    headerLogo.style.top = (window.innerHeight / 2 - (headerLogo.getBoundingClientRect().height * 1.15) / 2) + 'px'
+    let headerLogoTop = (window.innerHeight / 2 - (headerLogo.getBoundingClientRect().height * 1.15) / 2) + 'px';
+    headerLogo.style.top = headerLogoTop
+
+    let gap = headerLogo.style.gap
+    let headerLogoWidth = headerLogo.style.width
 
     const tl = gsap.timeline()
     let width = 325
@@ -216,25 +220,31 @@ if (headerLogo && document.querySelector('.hero')) {
 
     tl.fromTo(headerLogo,
         {
-            width: '1200px',
+            // width: '1200px',
         },
         {
-            width: width,
-            duration: 0.3,
-            top: -top,
-            ease: 'linear',
-            gap: 25,
+            // width: width,
+            // ease: 'linear',
+            // top: -top,
+            // gap: 25,
             scrollTrigger: {
                 trigger: '.hero',
                 start: 'top',
-                end: 'center',
+                end: '15%',
                 scrub: true,
-                toggleActions: 'play play reverse reverse',
+                toggleActions: 'play play',
                 onLeaveBack: () => {
-                    header.classList.remove('_active')
                 }
             },
             onComplete: () => {
+                gsap.to(headerLogo, {
+                    ease: 'ease',
+                    top: -top,
+                    gap: 25,
+                    width: width,
+                    duration: 0.5
+                });
+
                 header.classList.add('_active')
             },
         })
@@ -286,14 +296,6 @@ export const lineAnimationAction = () => {
 
 
 
-gsap.to(line,
-    {
-        height: '100%',
-        duration: 100,
-        ease: 'linear'
-    }
-)
-
 let scrollTimer = -1;
 function bodyScroll() {
     if (scrollTimer != -1) {
@@ -308,19 +310,7 @@ function scrollFinished() {
             height: percentage + '%',
             duration: 1,
             delay: 0.5,
-            ease: 'linear',
-            onComplete: () => {
-                gsap.fromTo(line,
-                    {
-                        height: line.style.height,
-                    },
-                    {
-                        height: '100%',
-                        duration: 100,
-                        ease: 'linear'
-                    }
-                )
-            }
+            ease: 'ease',
         }
     )
 }

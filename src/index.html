@@ -3,24 +3,22 @@
 "class":"_noscrollbar",
 })
 
-@@include('./html/header.html',{"class":" "})
-@@include('./html/loader.html')
+@@include('./html/header.html',{"class":""})
+ @@include('./html/loader.html')
 
 <main>
+    <button class="mute-audio" data-audio="files/audio.mp3">
+        <img src="img/icons/sound.svg" alt="">
+        <img src="img/icons/sound-2.svg" alt="">
+    </button>
+
     <section class="section hero">
         <div class="section__image">
             <img src="img/about.png" alt="">
         </div>
         <div class="section__container _container">
             <div class="section__body">
-                <div class="hero-logo">
-                    <img class="eye" src="img/icons/logo/eye.svg" alt="">
-                    <img class="mv" src="img/icons/logo/mv.svg" alt="">
-                    <img class="st" src="img/icons/logo/st.svg" alt="">
-                </div>
-                <button>
-                    <img src="img/icons/sound.svg" alt="">
-                </button>
+
             </div>
         </div>
     </section>
@@ -37,72 +35,23 @@
         </div>
     </section>
 
-    <section class="section projects">
+    <section class="section projects projects-home">
         <div class="section__container _container">
             <div class="section__body">
-                <div class="swiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="cart-item">
-                                <div class="cart-item__top">
-                                    <a href="">Название</a>
-                                    <span>локация</span>
-                                </div>
-                                <a href="" class="cart-item__image" data-hidden>
-                                    <img src="img/project.png" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="cart-item">
-                                <div class="cart-item__top">
-                                    <a href="">Название</a>
-                                    <span>локация</span>
-                                </div>
-                                <a href="" class="cart-item__image" data-hidden>
-                                    <img src="img/project.png" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="cart-item">
-                                <div class="cart-item__top">
-                                    <a href="">Название</a>
-                                    <span>локация</span>
-                                </div>
-                                <a href="" class="cart-item__image" data-hidden>
-                                    <img src="img/project.png" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="cart-item">
-                                <div class="cart-item__top">
-                                    <a href="">Название</a>
-                                    <span>локация</span>
-                                </div>
-                                <a href="" class="cart-item__image" data-hidden>
-                                    <img src="img/project.png" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="cart-item">
-                                <div class="cart-item__top">
-                                    <a href="">Название</a>
-                                    <span>локация</span>
-                                </div>
-                                <a href="" class="cart-item__image" data-hidden>
-                                    <img src="img/project.png" alt="">
-                                </a>
-                            </div>
-                        </div>
+                <div class="cart-item">
+                    <div class="cart-item__top">
+                        <a href="">Название</a>
+                        <span>локация</span>
                     </div>
+                    <a href="" class="cart-item__image" data-hidden>
+                        <img src="img/project.jpg" alt="">
+                    </a>
                 </div>
                 <a href="" class="_btn">Проекты</a>
             </div>
         </div>
     </section>
+
 
     <section class="section red">
         <div class="section__container _container">
@@ -112,8 +61,8 @@
                     как эстетической,
                     так и практической цели.</p>
                 <div data-hidden>
-                    <video playsinline poster="img/images.png" muted loop class="_video">
-                        <source src="files/images.mp4" type="video/mp4">
+                    <video playsinline poster="img/MRAMOROV.png" muted loop class="_video">
+                        <source src="files/MRAMOROV.mp4" type="video/mp4">
                     </video>
                 </div>
 
@@ -122,6 +71,7 @@
             </div>
         </div>
     </section>
+
 
     <section class="section steps">
         <div class="section__container _container">
@@ -166,7 +116,7 @@
         <div class="section__container ">
             <div class="section__body">
                 <div class="callback-image">
-                    <img src="img/hands.png" alt="">
+                    <img src="img/hands.jpg" alt="">
                 </div>
             </div>
         </div>

@@ -10,12 +10,19 @@
     padding: 15px;
 
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     overflow: hidden;
 
     @media (max-width: 1024px) {
         padding: 10px;
+    }
+
+    align-items: center;
+    @include adaptive-value("gap", 84, 25, 1);
+    @media (max-width: 1440px) {
+        @include adaptive-value("gap", 65, 25, 1);
     }
 
     &:before {
@@ -77,17 +84,44 @@
         position: relative;
         z-index: 1;
 
-        span {
-            font-family: "Felidae";
-            font-size: 128px;
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+        gap: 10px;
+
+        div {
+            width: 400px;
+            height: 80px;
+            position: relative;
+
+            &:before {
+                position: absolute;
+                content: "";
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba($color: $black, $alpha: 0.5);
+                backdrop-filter: blur(20px);
+            }
+
+            img {
+                width: 2%;
+                height: 100%;
+                object-fit: cover;
+                object-position: left;
+                position: relative;
+                z-index: 1;
+            }
+        }
+
+        label {
             font-style: normal;
             font-weight: 400;
             line-height: 1;
             text-transform: uppercase;
 
-            @include adaptive-value("font-size", 128, 16, 1);
-
-            opacity: 0;
+            @include adaptive-value("font-size", 18, 12, 1);
         }
     }
 }

@@ -19,34 +19,6 @@
         height: 100%;
     }
 
-    // .hero-logo
-
-    &-logo {
-        position: relative;
-        max-width: 1200px;
-        width: 100%;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        @include adaptive-value("gap", 84, 25, 1);
-
-        
-        .eye {
-            width: calc(469 * 100% / 1200);
-            margin-left: 1.8%;
-        }
-        .mv {
-        }
-        .st {
-            width: calc(602 * 100% / 1200);
-            margin-left: -3.5%;
-        }
-
-        display: none;
-    }
-
     .section__body {
         height: 100%;
         display: flex;
@@ -56,27 +28,5 @@
         img {
             pointer-events: none;
         }
-
-        button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            position: absolute;
-            z-index: 2;
-            left: 0;
-            bottom: 0;
-            width: 14px;
-            height: 14px;
-
-            img,
-            picture,
-            svg {
-                width: 100%;
-                height: 100%;
-                object-fit: contain;
-            }
-        }
     }
 }
-

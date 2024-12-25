@@ -127,12 +127,18 @@
 
     &.added {
         .add-to-cart {
-            display: flex;
-            background-color: $text-red;
-
             img,
             svg {
+                fill: $red;
                 transform: rotate(45deg);
+            }
+        }
+    }
+
+    &:not(.added) .add-to-cart {
+        @media (any-hover: hover) {
+            &:hover {
+                opacity: 0.5;
             }
         }
     }
@@ -179,14 +185,12 @@
             height: 100%;
             object-fit: cover;
             pointer-events: none;
-            transition: transform 1.5s ease 0s;
         }
 
         @media (any-hover: hover) {
             &:hover {
-                img,
-                picture {
-                    transform: scale(1.1);
+                + .product-card__name {
+                    opacity: 0.5;
                 }
             }
         }
@@ -199,14 +203,6 @@
     }
 
     .add-to-cart {
-        position: absolute;
-        top: 150px;
-        left: 50%;
-        transform: translate(-50%, 0);
-        z-index: 1;
-
-        background-color: $black;
-
         width: 40px;
         height: 40px;
 
@@ -214,30 +210,26 @@
         align-items: center;
         justify-content: center;
 
-        display: none;
-
-        @media (any-hover: none) {
-            display: flex;
-        }
-
         @media (max-width: 768px) {
             width: 30px;
-            display: flex;
             height: 30px;
         }
 
         img,
         svg {
-            width: 14px;
-            height: 14px;
+            width: 18px;
+            height: 18px;
             flex: 0 0 auto;
             pointer-events: none;
+            fill: $white;
 
             @media (max-width: 768px) {
-                width: 10px;
-                height: 10px;
+                width: 14px;
+                height: 14px;
             }
         }
+
+        transition: opacity 0.3s ease 0s;
 
         &:before {
             position: absolute;
