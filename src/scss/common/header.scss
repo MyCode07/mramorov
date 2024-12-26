@@ -11,23 +11,16 @@
         mix-blend-mode: difference;
     }
 
-    &._active,
     &._sticky {
         mix-blend-mode: difference;
-
-        &:before {
-            opacity: 1;
-        }
 
         .header__logo {
             opacity: 1;
         }
+    }
 
-        nav > ul > li {
-            svg {
-                fill: currentColor;
-            }
-        }
+    &._active {
+        color: $white;
 
         .eye,
         .st {
@@ -41,10 +34,6 @@
                 pointer-events: all;
             }
         }
-    }
-
-    &._active {
-        color: $white;
     }
 
     &._noanimate {

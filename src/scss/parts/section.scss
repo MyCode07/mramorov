@@ -336,6 +336,8 @@
                     background-position: left bottom;
                     background-size: 6px;
                     background-repeat: repeat-x;
+
+                    margin-right: auto;
                 }
 
                 &._active {
@@ -527,6 +529,10 @@
 
             &:nth-child(2) i {
                 font-size: 0.15em;
+            }
+
+            &:nth-child(3) i {
+                display: none;
             }
 
             &:nth-child(4) i {
@@ -1532,5 +1538,13 @@ body:has(.stones) .catalog ._btn {
     ._text-description__body {
         max-height: unset;
         overflow: unset;
+    }
+
+    form {
+        width: 100%;
+        margin-bottom: 45px;
+        width: 100%;
+        max-width: 360px;
+        margin-inline: auto;
     }
 }

@@ -1,13 +1,12 @@
 export const stickyHeader = () => {
     const header = document.querySelector('header');
-    const animatedLogo = document.querySelector('.header .animated-logo');
 
     // if (!header || animatedLogo) return
 
     // потом убрать это
-    if (!header || document.querySelector('.hero')) return
+    if (!header) return
 
-    const headerheigth = header.getBoundingClientRect().height / 3;
+    const headerheigth = 150;
 
 
     const sticky = () => {
@@ -15,9 +14,7 @@ export const stickyHeader = () => {
             header.classList.add('_sticky')
         }
         else {
-            if (!header.classList.contains('_sticky-static')) {
-                header.classList.remove('_sticky')
-            }
+            header.classList.remove('_sticky')
         }
     }
 

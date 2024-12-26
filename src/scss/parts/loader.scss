@@ -94,6 +94,10 @@
             height: 80px;
             position: relative;
 
+            .loader-body div {
+                width: calc(100vw - 20px);
+            }
+
             &:before {
                 position: absolute;
                 content: "";

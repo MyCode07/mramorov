@@ -217,15 +217,15 @@
 
         img,
         svg {
-            width: 18px;
-            height: 18px;
+            width: 15px;
+            height: 15px;
             flex: 0 0 auto;
             pointer-events: none;
             fill: $white;
 
             @media (max-width: 768px) {
-                width: 14px;
-                height: 14px;
+                width: 12px;
+                height: 12px;
             }
         }
 

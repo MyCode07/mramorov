@@ -95,6 +95,7 @@
         margin-bottom: 30px;
 
         font-weight: 300;
+        white-space: nowrap;
 
         @media (max-width: 1024px) {
             margin-bottom: 15px;
@@ -106,6 +107,7 @@
                 padding-right: 7.5px;
             }
         }
+
 
         span {
             flex: 0 0 auto;
