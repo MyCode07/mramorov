@@ -281,36 +281,61 @@ export const animateHiddenTextAction = () => {
 
 // scroll line aniamtion
 const line = document.querySelector('.line');
-let percentage = get_scroll_percentage();
+let duration = 360
+const tl = gsap.timeline();
+
+function change(duration) {
+    const currentProgress = tl.progress()
+    console.log(currentProgress, line.style.height);
+
+    tl
+        .clear()
+        .fromTo(line,
+            {
+                height: line.style.height,
+            },
+            {
+                height: '100%',
+                duration: duration,
+                ease: 'ease',
+            })
+    // .progress(currentProgress);
+}
 
 export const lineAnimationAction = () => {
     if (!line) return;
 
+    tl
+        .fromTo(line,
+            {
+                height: 0,
+            },
+            {
+                height: '100%',
+                duration: duration,
+                ease: 'ease',
+            })
+
 
     window.addEventListener('scroll', function () {
-        percentage = get_scroll_percentage();
-
         bodyScroll();
     })
 }
 
-
-
 let scrollTimer = -1;
 function bodyScroll() {
+    duration = 180
+    change(duration)
+
     if (scrollTimer != -1) {
         clearTimeout(scrollTimer);
+
     }
     scrollTimer = window.setTimeout(scrollFinished, 500);
+
 }
 
 function scrollFinished() {
-    gsap.to(line,
-        {
-            height: percentage + '%',
-            duration: 1,
-            delay: 0.5,
-            ease: 'ease',
-        }
-    )
+    duration = 360
+    change(duration)
 }

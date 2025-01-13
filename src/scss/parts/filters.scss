@@ -50,6 +50,7 @@
             }
 
             &._active {
+
                 img,
                 svg,
                 picture {
@@ -132,18 +133,7 @@
 
             @media (max-width: 768px) {
                 gap: 5px;
-                justify-content: flex-start;
-                width: fit-content;
-
-                width: 100vw;
-                margin-left: -10px;
-                padding-inline: 10px;
-                overflow: hidden;
-                overflow-x: auto;
-
-                &::-webkit-scrollbar {
-                    display: none;
-                }
+                flex-wrap: wrap;
             }
         }
     }
@@ -234,6 +224,7 @@
             @media (any-hover: hover) {
                 &:hover {
                     background-color: #080808;
+
                     span {
                         opacity: 0.5;
                     }

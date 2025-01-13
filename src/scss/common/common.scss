@@ -781,6 +781,7 @@ input[type="number"] {
 
 .line {
     position: fixed;
+    position: absolute;
     z-index: 1;
     left: 50%;
     top: 0;
@@ -855,12 +856,20 @@ input[type="number"] {
     width: 14px;
     height: 14px;
 
-    right: 30px;
+    right: 60px;
     bottom: 30px;
 
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media (max-width: 768px) {
+        right: 30px;
+    }
+
+    @media (max-width: 1024px) {
+        right: 12px;
+    }
 
     img,
     svg {

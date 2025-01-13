@@ -1,10 +1,10 @@
 .form {
-    & > :not(:last-child) {
+    &> :not(:last-child) {
         margin-bottom: 15px;
     }
 
     form {
-        & > :not(:last-child) {
+        &> :not(:last-child) {
             margin-bottom: 15px;
         }
     }
@@ -12,6 +12,7 @@
     // .form__item
 
     &__item {
+
         input,
         textarea {
             width: 100%;
@@ -33,6 +34,7 @@
                 }
             }
         }
+
         textarea {
             resize: none;
         }
@@ -83,7 +85,7 @@
             margin-top: 30px;
         }
 
-        & > div,
+        &>div,
         button {
             width: 100%;
             background: rgba(255, 255, 255, 0.02);
@@ -101,6 +103,7 @@
         span {
             font-size: 12px;
             color: $white;
+            text-align: center;
 
             a {
                 text-decoration: underline;
@@ -123,6 +126,7 @@
 
     &-white {
         .form__item {
+
             input,
             textarea {
                 background-color: rgba($color: $white, $alpha: 0.15);

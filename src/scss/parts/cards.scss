@@ -31,8 +31,7 @@
             }
         }
 
-        span {
-        }
+        span {}
     }
 
     // .cart-item__image
@@ -64,8 +63,11 @@
             height: 100%;
             object-fit: cover;
             pointer-events: none;
-            filter: grayscale(100%);
             transition: filter 0.3s ease 0s;
+
+            @media (any-hover: hover) {
+                filter: grayscale(100%);
+            }
         }
 
         @media (any-hover: hover) {
@@ -73,6 +75,7 @@
                 &:after {
                     opacity: 0;
                 }
+
                 img,
                 picture {
                     filter: grayscale(0);
@@ -127,10 +130,11 @@
 
     &.added {
         .add-to-cart {
+
             img,
             svg {
                 fill: $red;
-                transform: rotate(45deg);
+                transform: rotate(0deg);
             }
         }
     }
@@ -174,22 +178,21 @@
     // .product-card__image
 
     &__image {
-        @include adaptive-value("height", 345, 200, 1);
         width: 100%;
-        overflow: hidden;
         position: relative;
+        display: block;
 
         img,
         picture {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             pointer-events: none;
         }
 
         @media (any-hover: hover) {
             &:hover {
-                + .product-card__name {
+                +.product-card__name {
                     opacity: 0.5;
                 }
             }
@@ -258,9 +261,11 @@
                     0% {
                         transform: rotate(0deg);
                     }
+
                     50% {
                         transform: rotate(180deg);
                     }
+
                     100% {
                         transform: rotate(360deg);
                     }

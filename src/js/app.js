@@ -2,6 +2,7 @@ import { maskInputs } from "./static/inputmask.js";
 import { replaceDomElements } from "./static/replace.js";
 import { stickyHeader } from "./parts/header.js";
 import { playVideoAction } from "./parts/video.js";
+import SmoothScroll from "smoothscroll-for-websites";
 
 import "./parts/forms.js";
 import "./parts/qty.js";
@@ -12,9 +13,10 @@ import "./parts/tabs.js";
 import "./parts/filters.js";
 import "./parts/audio.js";
 import "./parts/stones.js";
-// import "./parts/canvas.js";
 import { animateAction, animateImagesAction, animateStaggerAction, animateHiddenTextAction, animateTextAction, lineAnimationAction } from "./parts/animations.js";
 import { runPrelaoder } from "./parts/loader.js";
+
+SmoothScroll();
 
 replaceDomElements();
 stickyHeader();

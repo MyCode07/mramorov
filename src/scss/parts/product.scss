@@ -103,7 +103,7 @@
         }
 
         @media (min-width: 769px) {
-            & > :nth-child(3) {
+            &> :nth-child(3) {
                 padding-right: 7.5px;
             }
         }
@@ -113,6 +113,7 @@
             flex: 0 0 auto;
 
             @media (min-width: 1025px) {
+
                 &:first-child,
                 &:nth-child(2) {
                     width: 23%;
@@ -133,8 +134,7 @@
                 }
             }
 
-            &:nth-child(5) {
-            }
+            &:nth-child(5) {}
         }
     }
 
@@ -179,6 +179,7 @@
         // .product__actions-left
 
         &-left {
+
             ._label,
             ._product__price {
                 @media (min-width: 1025px) {
@@ -259,5 +260,12 @@
                 }
             }
         }
+    }
+}
+
+.single-product {
+    ._text-description__body {
+        max-height: unset;
+        overflow: unset;
     }
 }

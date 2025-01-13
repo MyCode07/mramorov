@@ -13,8 +13,7 @@
 
     // .section__container
 
-    &__container {
-    }
+    &__container {}
 
     // .section__body
 
@@ -114,6 +113,7 @@
     &._no-linear-hero {
         height: 90vh;
         margin-bottom: 0;
+
         &:after {
             display: none;
         }
@@ -266,15 +266,9 @@
 .catalog {
     padding-bottom: 70px;
     padding-top: 70px;
+    background-color: $black;
 
-    @media (min-width: 1025px) {
-        height: 100vh;
-
-        .section__body,
-        ._container {
-            height: 100%;
-        }
-    }
+    @media (min-width: 1025px) {}
 
     @media (max-width: 1024px) {
         padding-top: 140px;
@@ -284,7 +278,8 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        height: 100%;
+        position: relative;
+        height: 600px;
 
         canvas {
             position: absolute;
@@ -302,6 +297,26 @@
             }
         }
 
+        img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+
+            opacity: 0;
+            z-index: -1;
+
+            transition: all 0.5s ease 0s;
+
+
+            &._active {
+                opacity: 1;
+            }
+        }
+
         li {
             a {
                 display: flex;
@@ -316,11 +331,23 @@
                 text-transform: uppercase;
                 gap: 5px;
 
+                margin-inline: auto;
+                max-width: $container + px;
+
+                @media (max-width: $containerWithPadding + px) {
+                    max-width: none;
+                    padding-inline: $padding + px;
+                }
+
+                @media (max-width: 1024px) {
+                    padding-inline: 10px;
+                }
+
                 span {
                     white-space: nowrap;
                 }
 
-                & > :last-child {
+                &> :last-child {
                     margin-left: auto;
                 }
 
@@ -341,8 +368,22 @@
                 }
 
                 &._active {
-                    background-color: $white;
+                    background-color: rgba($color: $white, $alpha: 0.2);
                     color: $black;
+
+                    backdrop-filter: blur(3px);
+                    -webkit-backdrop-filter: blur(3px);
+
+                    opacity: 1;
+                    font-weight: 500;
+
+                    div {
+                        max-width: 100%;
+                    }
+
+                    img {
+                        opacity: 1;
+                    }
                 }
 
                 img {
@@ -356,12 +397,15 @@
                     object-fit: cover;
                     z-index: -1;
                     pointer-events: none;
+                    display: none;
                 }
 
                 @media (any-hover: hover) {
                     &:hover {
                         opacity: 1;
                         font-weight: 500;
+                        backdrop-filter: blur(13px);
+                        -webkit-backdrop-filter: blur(13px);
 
                         div {
                             max-width: 100%;
@@ -376,17 +420,7 @@
         }
     }
 
-    ._btn {
-        @media (min-width: 1025px) {
-            display: flex;
-            justify-content: center;
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translate(-50%, 0);
-            z-index: 2;
-        }
-    }
+    ._btn {}
 
     // .catalog-page
 
@@ -396,7 +430,6 @@
         }
 
         ul {
-            height: auto;
             width: 100%;
         }
 
@@ -452,6 +485,7 @@
         @include adaptive-value("font-size", 34, 24, 1);
         line-height: 1;
         width: 100%;
+
         @media (min-width: 769px) {
             max-width: 45%;
         }
@@ -539,8 +573,7 @@
                 font-size: 0.15em;
             }
 
-            &:nth-child(5) i {
-            }
+            &:nth-child(5) i {}
         }
     }
 }
@@ -639,6 +672,7 @@
         max-width: 1570px;
         width: 100%;
     }
+
     // .partners-item{
 
     &-item {
@@ -893,6 +927,7 @@ body:has(.stones) .catalog ._btn {
 }
 
 .grid-section {
+
     .section__container,
     .section__body,
     .grid {
@@ -981,7 +1016,7 @@ body:has(.stones) .catalog ._btn {
 .projects {
     .grid {
         @media (min-width: 769px) {
-            & > :first-child {
+            &> :first-child {
                 grid-column: span 2;
 
                 .cart-item__image {
@@ -1013,6 +1048,15 @@ body:has(.stones) .catalog ._btn {
 
             @media (max-width: 768px) {
                 width: 100%;
+            }
+
+            .cart-item__top {
+                display: block;
+                text-align: center;
+
+                span {
+                    display: none;
+                }
             }
         }
     }
@@ -1048,8 +1092,7 @@ body:has(.stones) .catalog ._btn {
         }
     }
 
-    .section__body {
-    }
+    .section__body {}
 
     .grid {
         @media (max-width: 768px) {
@@ -1065,7 +1108,7 @@ body:has(.stones) .catalog ._btn {
             display: block;
         }
 
-        & > :not(:last-child) {
+        &> :not(:last-child) {
             margin-bottom: 15px;
 
             @media (max-width: 768px) {
@@ -1108,12 +1151,14 @@ body:has(.stones) .catalog ._btn {
 
 .video {
     .section__body {
+
         video,
         iframe {
             width: 100%;
             object-fit: cover;
 
             height: 100vh;
+
             @media (max-width: 768px) {
                 height: 50vh;
             }
@@ -1134,6 +1179,7 @@ body:has(.stones) .catalog ._btn {
 
             @media (any-hover: hover) {
                 &:hover {
+
                     svg,
                     img,
                     picture {
@@ -1221,6 +1267,7 @@ body:has(.stones) .catalog ._btn {
             &.text-left {
                 text-align: right;
             }
+
             &.text-right {
                 text-align: left;
             }
@@ -1339,6 +1386,14 @@ body:has(.stones) .catalog ._btn {
             text-align: center;
         }
 
+        // .advantages__text-logo
+
+        &-logo {
+            margin-bottom: 1em;
+            pointer-events: none;
+        }
+
+
         h2 {
             display: block;
             margin-bottom: 15px;
@@ -1408,7 +1463,9 @@ body:has(.stones) .catalog ._btn {
 
     h1,
     .h1 {
-        @include adaptive-value("font-size", 28, 18, 1);
+        @include adaptive-value("font-size", 30, 18, 1);
+        color: $text-red;
+        margin-bottom: 1em;
     }
 
     .tabs {
@@ -1464,7 +1521,7 @@ body:has(.stones) .catalog ._btn {
             flex: 1 1 auto;
             width: 100%;
 
-            & > div:not(._active) {
+            &>div:not(._active) {
                 display: none;
             }
         }
@@ -1539,12 +1596,18 @@ body:has(.stones) .catalog ._btn {
         max-height: unset;
         overflow: unset;
     }
+}
 
+.search-page {
     form {
         width: 100%;
         margin-bottom: 45px;
         width: 100%;
         max-width: 360px;
         margin-inline: auto;
+    }
+
+    ._nothing {
+        text-align: center;
     }
 }
