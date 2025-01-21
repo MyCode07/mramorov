@@ -76,15 +76,13 @@ figure {
     height: auto;
 }
 
-h1 {
-}
+h1 {}
 
 h2,
 h3,
 h4,
 h5,
-h6 {
-}
+h6 {}
 
 p {
     font-size: 16px;
@@ -284,8 +282,7 @@ p {
         li {
             color: $white;
 
-            a {
-            }
+            a {}
 
             @media (any-hover: hover) {
                 &:hover {
@@ -314,6 +311,7 @@ p {
     display: flex;
     justify-content: center;
     margin-top: 60px;
+
     @media (max-width: 1024px) {
         margin-top: 45px;
     }
@@ -324,6 +322,7 @@ p {
         gap: 10px;
 
         li {
+
             span,
             a {
                 width: 40px;
@@ -423,7 +422,7 @@ p {
                 white-space: nowrap;
             }
 
-            & > :last-child {
+            &> :last-child {
                 margin-left: auto;
             }
 
@@ -485,6 +484,7 @@ p {
 }
 
 button {
+
     svg,
     img {
         pointer-events: none;
@@ -540,8 +540,7 @@ button {
         flex-direction: column;
         gap: 10px;
 
-        @media (max-width: 1024px) {
-        }
+        @media (max-width: 1024px) {}
 
         li {
             font-weight: 300;
@@ -690,6 +689,7 @@ button {
         height: 465px;
         min-height: unset;
     }
+
     @media (min-width: 769px) {
         grid-column: span 2;
         aspect-ratio: unset !important;
@@ -734,6 +734,7 @@ button {
 
         @media (any-hover: hover) {
             &:hover {
+
                 svg,
                 img,
                 picture {
@@ -745,7 +746,7 @@ button {
 
     input {
         text-align: center;
-        width: 36px;
+        width: 30px;
         flex: 0 0 auto;
     }
 }
@@ -883,6 +884,7 @@ input[type="number"] {
     }
 
     &._active {
+
         img,
         svg {
             &:nth-child(1) {
@@ -894,4 +896,16 @@ input[type="number"] {
             }
         }
     }
+}
+
+.hide-bc-page .aioseo-breadcrumbs {
+
+    &> :nth-last-child(-n+2) {
+        display: none;
+    }
+
+    &> :last-child() {
+        display: none;
+    }
+
 }

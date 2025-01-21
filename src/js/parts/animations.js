@@ -188,67 +188,64 @@ export const animateTextAction = () => {
 }
 
 
-// animate headerlogo
-const headerLogo = document.querySelector('header .animated-logo');
-// потом убрать .hero
-if (headerLogo && document.querySelector('.hero') && window.innerWidth > 1024) {
+// animate logo
+const logo = document.querySelector('.animated-logo');
+const logoBlur = document.querySelector('.animated-logo .blur');
+const logoUnBlur = document.querySelector('.animated-logo .unblur');
+const logoBgc = document.querySelector('.animated-logo__back');
+
+if (logo && window.innerWidth > 1024) {
     const header = document.querySelector('header');
-    const eye = headerLogo.querySelector('.eye')
-    const mv = headerLogo.querySelector('.mv')
-    const st = headerLogo.querySelector('.st')
+    const eye = logo.querySelector('.eye')
+    const mv = logo.querySelector('.mv')
+    const st = logo.querySelector('.st')
 
-    let headerLogoTop = (window.innerHeight / 2 - (headerLogo.getBoundingClientRect().height * 1.15) / 2) + 'px';
-    headerLogo.style.top = headerLogoTop
+    let logoTop = (window.innerHeight / 2 - (logo.getBoundingClientRect().height * 1.15) / 2) + 'px';
+    // logo.style.top = logoTop
 
-    let gap = headerLogo.style.gap
-    let headerLogoWidth = headerLogo.style.width
+    let gap = logo.style.gap
+    let logoWidth = logo.style.width
 
-    const tl = gsap.timeline()
     let width = 325
-    let top = 72
+    let top = 3
+    let height = 28
 
-    if (window.innerWidth <= 1024) {
-        top = 75
-        width = 312
-    }
+    gsap.to(logoBlur, {
+        delay: 0.3,
+        opacity: 0,
+        duration: 2.5,
+        ease: 'linear'
+    })
 
-    if (window.innerWidth <= 768) {
-        top = 42
-        width = 173
-    }
+    gsap.to(logoUnBlur, {
+        delay: 0.3,
+        opacity: 1,
+        duration: 2.5,
+        ease: 'linear'
+    })
 
+    gsap.to(logo, {
+        delay: 3,
+        // ease: "power2.inOut",
+        ease: "power4.inOut",
+        top: top,
+        gap: 25,
+        // height: height,
+        width: width,
+        duration: 1.5,
 
-    tl.fromTo(headerLogo,
-        {
-            // width: '1200px',
-        },
-        {
-            // width: width,
-            // ease: 'linear',
-            // top: -top,
-            // gap: 25,
-            scrollTrigger: {
-                trigger: '.hero',
-                start: 'top',
-                end: '15%',
-                scrub: true,
-                toggleActions: 'play play',
-                onLeaveBack: () => {
-                }
-            },
-            onComplete: () => {
-                gsap.to(headerLogo, {
-                    ease: 'ease',
-                    top: -top,
-                    gap: 25,
-                    width: width,
-                    duration: 0.5
-                });
+        onComplete: () => {
+            logoBgc.classList.add('_remove')
+            logo.classList.add('_active')
 
-                header.classList.add('_active')
-            },
-        })
+            setTimeout(() => {
+                logoBgc.remove()
+            }, 1000);
+        }
+    });
 }
+
+
 
 // data-hidden-text aniamtion
 const aniamtedHiddenText = document.querySelectorAll('[data-hidden-text]');
@@ -286,7 +283,6 @@ const tl = gsap.timeline();
 
 function change(duration) {
     const currentProgress = tl.progress()
-    console.log(currentProgress, line.style.height);
 
     tl
         .clear()

@@ -13,6 +13,7 @@ import "./parts/tabs.js";
 import "./parts/filters.js";
 import "./parts/audio.js";
 import "./parts/stones.js";
+import "./parts/gallery-scroll.js";
 import { animateAction, animateImagesAction, animateStaggerAction, animateHiddenTextAction, animateTextAction, lineAnimationAction } from "./parts/animations.js";
 import { runPrelaoder } from "./parts/loader.js";
 

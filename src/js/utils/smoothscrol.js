@@ -2,7 +2,7 @@ import SmoothScroll from "smoothscroll-for-websites"
 
 export const smoothscroll = () => {
     SmoothScroll({
-        animationTime: 800,
+        animationTime: 1000,
         stepSize: 100,
         accelerationDelta: 35,
         accelerationMax: 2,

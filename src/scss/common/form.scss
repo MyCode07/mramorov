@@ -41,12 +41,12 @@
 
         &._error input,
         &._error textarea {
-            color: $red;
-            border-color: 0 0 1px 1px $red;
+            color: $text-red;
+            border-color: 0 0 1px 1px $text-red;
         }
 
         &._error span {
-            color: $red !important;
+            color: $text-red !important;
         }
     }
 
@@ -64,6 +64,45 @@
 
         @media (max-width: 1024px) {
             flex-direction: column;
+        }
+    }
+
+    // .form__file
+
+    &__file {
+        font-size: 14px;
+        text-align: center;
+
+        label {
+            cursor: pointer;
+            margin-inline: auto;
+            display: block;
+            position: relative;
+            width: fit-content;
+            padding: 10px;
+            background-color: rgba($color: $red, $alpha: 0.5);
+            cursor: pointer;
+
+            transition: all 0.3s ease 0s;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    background-color: rgba($color: $red, $alpha: 0.25);
+                }
+            }
+
+            input {
+                position: absolute;
+                z-index: -1;
+                opacity: 0;
+                display: block;
+                width: 0;
+                height: 0;
+            }
+
+            span {
+                pointer-events: none;
+            }
         }
     }
 
@@ -97,6 +136,14 @@
 
             @media (max-width: 768px) {
                 font-size: 12px;
+            }
+
+            transition: all 0.3s ease 0s;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    background: rgba(255, 255, 255, 0.2);
+                }
             }
         }
 

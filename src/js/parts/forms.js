@@ -93,6 +93,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         form.classList.remove('_sending');
                     }
                 })
+
+                checkFiles(form)
             }
         })
     }
@@ -251,35 +253,37 @@ export function resetForm(formFile) {
 }
 
 export function checkFiles(form) {
-    const formFile = form.querySelector('input[name="file[]"]');
+    const formFile = form.querySelector('input[name="file"]');
 
     if (!formFile) return;
 
 
-    const fileElem = formFile.closest('.file')
-    const deleteFileElem = fileElem.querySelector('._delete-file');
+    // const fileElem = formFile.closest('.file')
+    // const deleteFileElem = fileElem.querySelector('._delete-file');
 
-    let uploadedFiels = fileElem.querySelectorAll('.file-upload')
+    // let uploadedFiels = fileElem.querySelectorAll('.file-upload')
 
     formFile.addEventListener('change', () => {
-        uploadedFiels = fileElem.querySelectorAll('.file-upload')
-        if (uploadedFiels.length) {
-            uploadedFiels.forEach(f => f.remove())
-        }
+
+
+        // uploadedFiels = fileElem.querySelectorAll('.file-upload')
+        // if (uploadedFiels.length) {
+        //     uploadedFiels.forEach(f => f.remove())
+        // }
 
         uploadFile(formFile.files);
     });
 
 
-    deleteFileElem.addEventListener('click', () => {
-        formFile.value = '';
-        deleteFileElem.style.display = 'none';
+    // deleteFileElem.addEventListener('click', () => {
+    //     formFile.value = '';
+    //     deleteFileElem.style.display = 'none';
 
-        uploadedFiels = fileElem.querySelectorAll('.file-upload')
-        if (uploadedFiels.length) {
-            uploadedFiels.forEach(f => f.remove())
-        }
-    })
+    //     uploadedFiels = fileElem.querySelectorAll('.file-upload')
+    //     if (uploadedFiels.length) {
+    //         uploadedFiels.forEach(f => f.remove())
+    //     }
+    // })
 
 
     function uploadFile(files) {
@@ -289,24 +293,27 @@ export function checkFiles(form) {
                 alert('Разрешены только текстовые документы и изображения.');
                 formFile.value = '';
 
-                deleteFileElem.style.display = 'none';
+                // deleteFileElem.style.display = 'none';
 
                 return;
             }
             if (file.size > 20 * 1024 * 1024) {
                 alert('Файл должен быть менее 20 МБ.');
 
-                deleteFileElem.style.display = 'none';
+                // deleteFileElem.style.display = 'none';
                 return;
             }
 
-            deleteFileElem.style.display = 'block';
+            // deleteFileElem.style.display = 'block';
 
             var reader = new FileReader();
 
             reader.onload = function (e) {
-                const newfile = `<div class="file-upload" data-id="${index}">${file.name}</div>`;
-                fileElem.insertAdjacentHTML('beforeend', newfile)
+                let file = formFile.files[0];
+                formFile.closest('.form__file').querySelector('span').textContent = file.name;
+
+                // const newfile = `<div class="file-upload" data-id="${index}">${file.name}</div>`;
+                // fileElem.insertAdjacentHTML('beforeend', newfile)
             };
 
             reader.onerror = function (e) {

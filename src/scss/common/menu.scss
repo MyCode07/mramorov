@@ -189,6 +189,16 @@
         // .menu__bottom-navigation
 
         &-navigation {
+
+            @media (max-width:768px) {
+                order: 10;
+
+                ul {
+                    display: flex;
+                    flex-direction: column-reverse;
+                }
+            }
+
             span {
                 @include adaptive-value("font-size", 16, 14, 1);
             }
@@ -246,6 +256,7 @@
 
             @media (min-width: 769px) {
                 align-items: flex-end;
+
                 a {
                     display: block;
                     width: 100%;
