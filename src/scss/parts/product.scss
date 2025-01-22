@@ -191,13 +191,17 @@
             }
         }
 
+        ._label {
+            opacity: 1;
+            color: rgba($color: $white, $alpha: 0.5);
+        }
 
         @media (max-width: 1024px) {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
 
             ._label {
-                display: none;
+                // display: none;
             }
 
             ._product__price {
@@ -266,7 +270,34 @@
                     opacity: 1;
                 }
             }
+
+            span {
+                pointer-events: none;
+            }
+
+            .not-in-cart {}
+
+            .in-cart {
+                position: absolute;
+                right: 0;
+                opacity: 0;
+            }
         }
+    }
+
+    &.added {
+
+        .product__actions .add-to-cart {
+
+            .not-in-cart {
+                opacity: 0;
+            }
+
+            .in-cart {
+                opacity: 1;
+            }
+        }
+
     }
 }
 

@@ -422,7 +422,7 @@ p {
                 white-space: nowrap;
             }
 
-            &> :last-child {
+            & > :last-child {
                 margin-left: auto;
             }
 
@@ -900,12 +900,14 @@ input[type="number"] {
 
 .hide-bc-page .aioseo-breadcrumbs {
 
-    &> :nth-last-child(-n+2) {
+    & > :nth-last-child(-n+2) {
         display: none;
     }
 
-    &> :last-child() {
+    & > :last-child() {
         display: none;
     }
 
 }
+
+

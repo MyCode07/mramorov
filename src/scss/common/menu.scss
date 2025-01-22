@@ -116,6 +116,11 @@
                     letter-spacing: -0.3px;
                     text-transform: uppercase;
 
+                    &[aria-current="page"] {
+                        filter: blur(2px);
+                        -webkit-filter: blur(2px);
+                    }
+
                     @media (max-width: 768px) {
                         letter-spacing: normal;
                     }
@@ -263,6 +268,11 @@
                     text-align: right;
                 }
             }
+        }
+
+        ul li a[aria-current="page"] {
+            filter: blur(1px);
+            -webkit-filter: blur(1px);
         }
     }
 

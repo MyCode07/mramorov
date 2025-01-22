@@ -206,9 +206,17 @@ if (logo && window.innerWidth > 1024) {
     let gap = logo.style.gap
     let logoWidth = logo.style.width
 
-    let width = 325
+    let width = 353.83
     let top = 3
-    let height = 28
+    top = 120
+    let height = 30
+    let scale = 0.41627
+    let ease = 'power4.inOut'
+
+    if (window.innerWidth <= 1200) {
+        scale = 0.50547
+        top = 87
+    }
 
     gsap.to(logoBlur, {
         delay: 0.3,
@@ -224,15 +232,32 @@ if (logo && window.innerWidth > 1024) {
         ease: 'linear'
     })
 
+    gsap.to(logoUnBlur, {
+        delay: 3,
+        ease: ease,
+        scale: scale,
+        duration: 0.9,
+    });
+
+    gsap.to(logoBlur, {
+        delay: 3,
+        ease: ease,
+        scale: scale,
+        duration: 0.9,
+    });
+
+
+
     gsap.to(logo, {
         delay: 3,
-        // ease: "power2.inOut",
-        ease: "power4.inOut",
+        // ease: "easeOut",
+        ease: ease,
         top: top,
         gap: 25,
+        y: 0,
         // height: height,
-        width: width,
-        duration: 1.5,
+        // width: width,
+        duration: 0.9,
 
         onComplete: () => {
             logoBgc.classList.add('_remove')
