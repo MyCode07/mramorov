@@ -6,8 +6,10 @@ export const stickyHeader = () => {
     // потом убрать это
     if (!header) return
 
-    const headerheigth = 150;
+    if (document.querySelector('.basket')) return;
+    if (document.querySelector('.basket-empty')) return;
 
+    const headerheigth = 100;
 
     const sticky = () => {
         if (window.scrollY > headerheigth) {

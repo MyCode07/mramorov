@@ -1,6 +1,6 @@
 .menu {
     position: fixed;
-    z-index: 12;
+    z-index: 16;
     left: 0;
     top: 0;
     width: 100%;
@@ -62,6 +62,7 @@
             position: absolute;
             left: 0;
             top: 50%;
+            pointer-events: none;
 
             @media (max-width: 768px) {
                 width: 30px;
@@ -117,8 +118,8 @@
                     text-transform: uppercase;
 
                     &[aria-current="page"] {
-                        filter: blur(2px);
-                        -webkit-filter: blur(2px);
+                        filter: blur(1px);
+                        -webkit-filter: blur(1px);
                     }
 
                     @media (max-width: 768px) {
@@ -171,25 +172,27 @@
             span,
             label {
                 color: rgba($color: $white, $alpha: 0.25);
-                font-size: 12px;
+                font-size: 14px;
                 line-height: 1;
                 letter-spacing: -0.3px;
                 text-transform: uppercase;
 
                 @media (max-width: 768px) {
-                    font-size: 10px;
                     letter-spacing: normal;
                 }
             }
 
             ._numbers {
                 font-size: 14px;
+            }
 
+            a {
                 @media (max-width: 768px) {
-                    font-size: 12px;
+                    font-size: 14px;
                 }
             }
         }
+
 
         // .menu__bottom-navigation
 

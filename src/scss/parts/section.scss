@@ -68,7 +68,7 @@
     }
 
     &.pages-hero {
-        margin-bottom: 0 !important;
+        margin-bottom: 30px !important;
         height: 550px;
         position: relative;
 
@@ -218,7 +218,7 @@
         z-index: 2;
 
         h1 {
-            @include adaptive-value("font-size", 24, 16, 1);
+            @include adaptive-value("font-size", 24, 20, 1);
         }
 
         h1,
@@ -291,15 +291,6 @@
 
         @media (max-width:1024px) {
             height: auto;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px 10px;
-
-            & > :nth-child(2),
-            & > :nth-child(5),
-            & > :last-child {
-                grid-column: span 2;
-            }
         }
 
         &:after,
@@ -361,6 +352,10 @@
         }
 
         li {
+            &:nth-child(2) a div::after {
+                display: none;
+            }
+
             a {
                 display: flex;
                 align-items: flex-end;
@@ -383,9 +378,9 @@
                 }
 
                 @media (max-width: 1024px) {
-                    padding-inline: 0;
-                    padding-top: 0;
-                    padding-bottom: 0;
+                    padding-inline: 10px;
+                    padding-top: 70px;
+                    padding-bottom: 40px;
                     position: relative;
 
                     color: $white;
@@ -396,29 +391,13 @@
                     display: flex;
                     flex-direction: column;
                     align-items: center;
+                    justify-content: flex-start;
+                    gap: 10px;
+
                     text-align: center;
-
                     background-color: transparent;
-
-
-                    &:before {
-                        position: absolute;
-                        content: '';
-                        left: 0;
-                        right: 0;
-                        top: 50%;
-                        transform: translate(0, -50%);
-                        height: 25px;
-                        width: 100%;
-
-                        font-weight: 500;
-                        backdrop-filter: blur(13px);
-                        -webkit-backdrop-filter: blur(13px);
-                        z-index: 0;
-                        pointer-events: none;
-
-                        display: none;
-                    }
+                    height: 600px;
+                    overflow: hidden;
 
                     &:after {
                         position: absolute;
@@ -429,11 +408,7 @@
                         height: 100%;
                         pointer-events: none;
                         z-index: 1;
-                        background-color: rgba($color: $black, $alpha: 0.2);
-
-                        @media (max-width:1024px) {
-                            display: none;
-                        }
+                        background: linear-gradient(0deg, rgba(0, 0, 0, 0.00) 10%, rgba(0, 0, 0, 0.8) 100%);
                     }
 
                     span,
@@ -448,6 +423,7 @@
                     @media (max-width:1024px) {
                         position: relative;
                         z-index: 2;
+                        font-size: 28px;
                     }
                 }
 
@@ -455,29 +431,59 @@
                     @media (min-width:1025px) {
                         margin-left: auto;
                     }
+
+
+                    @media (max-width:1024px) {
+                        font-size: 26px;
+                        opacity: 0.5;
+                    }
+
                 }
 
                 div {
-                    pointer-events: none;
-                    width: 100%;
-                    height: 6px;
-                    flex: 1 1 auto;
-                    max-width: 0;
-                    transition: max-width 0.5s ease-in 0s;
+                    @media (min-width:1025px) {
+                        pointer-events: none;
+                        width: 100%;
+                        height: 6px;
+                        flex: 1 1 auto;
+                        max-width: 0;
+                        transition: max-width 0.5s ease-in 0s;
 
-                    background-image: radial-gradient(circle at 3px 3px, $red 1px, transparent 0);
-                    background-position: left bottom;
-                    background-size: 6px;
-                    background-repeat: repeat-x;
+                        background-image: radial-gradient(circle at 3px 3px, $red 1px, transparent 0);
+                        background-position: left bottom;
+                        background-size: 6px;
+                        background-repeat: repeat-x;
 
-                    margin-right: auto;
-
-                    @media (max-width:1024px) {
-                        max-width: 100%;
-                        background-image: radial-gradient(circle at 3px 3px, $white 1px, transparent 0);
+                        margin-right: auto;
                     }
 
-                    display: none;
+                    @media (max-width:1024px) {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+
+                        &:before,
+                        &:after {
+                            position: absolute;
+                            content: '';
+                            left: 0;
+                            width: 100%;
+                            height: 30%;
+                        }
+
+                        &:before {
+                            bottom: 0;
+                            background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.50) 50%, #000 100%);
+                        }
+
+                        &:after {
+                            top: 0;
+                            background: linear-gradient(0deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.50) 50%, #000 100%);
+                        }
+                    }
+
                 }
 
                 &._active {
@@ -514,18 +520,16 @@
                     z-index: -1;
                     pointer-events: none;
                     display: none;
-
+                    position: absolute;
+                    left: 0;
+                    top: 0;
 
                     @media (max-width:1024px) {
                         display: block;
                         opacity: 1;
-                        height: 400px;
-                        margin-bottom: 5px;
+                        transform: scale(1.2);
                     }
 
-                    @media (max-width:768px) {
-                        height: 45vw;
-                    }
                 }
 
                 @media (any-hover: hover) {
@@ -1515,6 +1519,10 @@ body:has(.stones) .catalog ._btn {
             max-width: 80%;
         }
 
+        @media (max-width:600px) {
+            max-width: 90%;
+        }
+
         * {
             text-align: center;
         }
@@ -1526,6 +1534,11 @@ body:has(.stones) .catalog ._btn {
             pointer-events: none;
         }
 
+        p {
+            @media (max-width:768px) {
+                font-size: 16px;
+            }
+        }
 
         h2 {
             display: block;
@@ -1718,17 +1731,6 @@ body:has(.stones) .catalog ._btn {
     }
 }
 
-.basket-empty {
-    h1 {
-        text-align: center;
-
-        @include adaptive-value("font-size", 40, 22, 1);
-    }
-
-    ._btn {
-        margin-top: 30px !important;
-    }
-}
 
 .basket-thanks {
     h1 {
@@ -1827,7 +1829,9 @@ body:has(.stones) .catalog ._btn {
         }
 
 
-        a {
+        // .gallery-scroll__item
+
+        &__item {
             width: 400px;
             display: block;
 
@@ -1835,6 +1839,12 @@ body:has(.stones) .catalog ._btn {
                 min-width: 0;
                 @include adaptive-value("width", 400, 240, 1);
                 flex: 0 0 auto;
+            }
+
+            cursor: pointer;
+
+            * {
+                pointer-events: none;
             }
 
             img {

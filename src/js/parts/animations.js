@@ -2,7 +2,6 @@
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger.js'
 import { TextPlugin } from 'gsap/TextPlugin.js';
-import { get_scroll_percentage } from '../static/scroll-percentage.js';
 
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
@@ -194,7 +193,7 @@ const logoBlur = document.querySelector('.animated-logo .blur');
 const logoUnBlur = document.querySelector('.animated-logo .unblur');
 const logoBgc = document.querySelector('.animated-logo__back');
 
-if (logo && window.innerWidth > 1024) {
+if (logo) {
     const header = document.querySelector('header');
     const eye = logo.querySelector('.eye')
     const mv = logo.querySelector('.mv')
@@ -213,9 +212,24 @@ if (logo && window.innerWidth > 1024) {
     let scale = 0.41627
     let ease = 'power4.inOut'
 
-    if (window.innerWidth <= 1200) {
+    if (window.innerWidth > 1024 && window.innerWidth <= 1200) {
         scale = 0.50547
         top = 87
+    }
+
+    if (window.innerWidth > 768 && window.innerWidth <= 1024) {
+        scale = 0.433
+        top = 89
+    }
+
+    if (window.innerWidth > 600 && window.innerWidth <= 768) {
+        scale = 0.421
+        top = 79
+    }
+
+    if (window.innerWidth <= 600) {
+        scale = 0.6322
+        top = 32
     }
 
     gsap.to(logoBlur, {
@@ -269,8 +283,6 @@ if (logo && window.innerWidth > 1024) {
         }
     });
 }
-
-
 
 // data-hidden-text aniamtion
 const aniamtedHiddenText = document.querySelectorAll('[data-hidden-text]');

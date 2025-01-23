@@ -1,5 +1,5 @@
 .basket {
-    @include adaptive-value("padding-top", 250, 90, 1);
+    @include adaptive-value("padding-top", 250, 120, 1);
 
     .section__flex {
         gap: 200px;
@@ -262,11 +262,21 @@
     // .basket-empty
 
     &-empty {
+        padding-top: 80px;
 
         .breadcrumb,
         .aioseo-breadcrumbs {
             justify-content: center;
             margin-inline: auto;
+        }
+
+        h1 {
+            text-align: center;
+            @include adaptive-value("font-size", 26, 16, 1);
+        }
+
+        ._btn {
+            margin-top: 30px !important;
         }
     }
 }

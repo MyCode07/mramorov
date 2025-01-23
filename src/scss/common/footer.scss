@@ -41,8 +41,7 @@
 
     // .footer__container
 
-    &__container {
-    }
+    &__container {}
 
     // .footer__body
 
@@ -94,7 +93,7 @@
         span,
         label {
             color: rgba($color: $white, $alpha: 0.25);
-            font-size: 12px;
+            font-size: 14px;
             line-height: 1;
             letter-spacing: -0.3px;
             text-transform: uppercase;
@@ -102,7 +101,6 @@
             display: block;
 
             @media (max-width: 768px) {
-                font-size: 10px;
                 letter-spacing: normal;
             }
         }
@@ -110,8 +108,7 @@
 
     // .footer__navigation
 
-    &__navigation {
-    }
+    &__navigation {}
 
     // .footer__contacts
 
@@ -154,8 +151,7 @@
 
     // .footer__services
 
-    &__services {
-    }
+    &__services {}
 
     // .footer__logo
 
@@ -213,6 +209,8 @@
         }
 
         @media (max-width: 768px) {
+            font-size: 14px;
+
             a {
                 span {
                     display: none;
@@ -220,17 +218,14 @@
             }
         }
 
-        @media (max-width: 425px) {
-            font-size: 10px;
-        }
+    }
+
+    ul a {
+        font-size: 18px;
     }
 
     ._numbers {
         font-size: 14px;
-
-        @media (max-width: 768px) {
-            font-size: 12px;
-        }
     }
 
     a,

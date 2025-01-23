@@ -11,7 +11,7 @@ body {
     font-weight: 400;
     background-color: $black;
     color: $white;
-    @include adaptive-value("font-size", 18, 14, 1);
+    @include adaptive-value("font-size", 18, 16, 1);
 
     &._noscroll {
         overflow: hidden;
@@ -91,7 +91,6 @@ p {
     font-weight: 300;
 
     @media (max-width: 1024px) {
-        font-size: 14px;
         letter-spacing: normal;
     }
 }
@@ -119,14 +118,6 @@ p {
         font-size: 16px;
         margin-top: 40px;
         letter-spacing: normal;
-    }
-
-    @media (max-width: 768px) {
-        font-size: 14px;
-    }
-
-    @media (max-width: 425px) {
-        font-size: 12px;
     }
 }
 
@@ -262,7 +253,7 @@ p {
         &-breadcrumb {
             flex: 0 0 auto;
             font-weight: 300;
-            @include adaptive-value("font-size", 14, 12, 1);
+            font-size: 14px;
 
             &:last-child {
                 opacity: 0.5;
@@ -378,7 +369,7 @@ p {
     align-items: center;
     justify-content: center;
     gap: 5px;
-
+    white-space: nowrap;
     text-transform: lowercase;
 }
 
@@ -393,6 +384,11 @@ p {
     .title__box {
         @media (max-width: 768px) {
             margin: 15px 0;
+        }
+
+        h1,
+        h3 {
+            @include adaptive-value('font-size', 24, 20, 1);
         }
 
         div {
@@ -452,10 +448,6 @@ p {
 
             @media (max-width: 1024px) {
                 font-size: 16px;
-            }
-
-            @media (max-width: 768px) {
-                font-size: 14px;
             }
         }
     }
@@ -720,8 +712,8 @@ button {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 15px;
-        height: 15px;
+        width: 20px;
+        height: 20px;
         flex: 0 0 auto;
 
         svg,
@@ -746,7 +738,7 @@ button {
 
     input {
         text-align: center;
-        width: 30px;
+        width: 20px;
         flex: 0 0 auto;
     }
 }
@@ -909,5 +901,3 @@ input[type="number"] {
     }
 
 }
-
-
