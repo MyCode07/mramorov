@@ -230,39 +230,24 @@ body:has(.menu._open) .header {
     align-items: center;
     justify-content: center;
 
-    .logo {
+    svg {
         flex: 0 0 auto;
-        transform-origin: top;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        // transform-origin: top;
+        display: block;
 
-        @include adaptive-value("gap", 42, 25, 1);
         width: 100%;
-
-        // margin-left: -7px;
-
-        @media (max-width: 1024px) {
-            max-width: calc(100% - 20px);
-            margin-left: 0;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
     }
 
 
     .blur {
         filter: blur(20px);
+        -webkit-filter: blur(20px);
+
         position: absolute;
         left: 0;
-        top: 0;
+        top: 50%;
+        transform: translate(0, -50%);
         width: 100%;
-        height: 100%;
         pointer-events: none;
 
         * {
@@ -275,23 +260,14 @@ body:has(.menu._open) .header {
         pointer-events: none;
     }
 
-    .eye {
-        width: calc(469 * 100% / 1200);
-        margin-left: 1.8%;
+    .eye,
+    .mv,
+    .st,
+    .msc {
         pointer-events: none;
+        transition: opacity 0.2s ease 0s;
     }
 
-    .mv {
-        pointer-events: none;
-    }
-
-    .st {
-        width: calc(602 * 100% / 1200);
-        margin-left: -3.5%;
-        pointer-events: none;
-    }
-
-    transition: height 0.3s ease 0s;
 
     &._active {
         // .logo {
@@ -299,7 +275,8 @@ body:has(.menu._open) .header {
         // }
 
         .eye,
-        .st {
+        .st,
+        .msc {
             opacity: 0;
         }
 

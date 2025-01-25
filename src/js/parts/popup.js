@@ -14,8 +14,6 @@ document.addEventListener('click', function (e) {
 
         if (popup) {
             popup.classList.add('_open')
-            // wrapper.classList.add('_overlay')
-
             lockPadding();
         }
     }
@@ -45,12 +43,5 @@ document.addEventListener('click', function (e) {
 
 function closePopup(popup) {
     popup.classList.remove('_open')
-
-    if (popup.id != partnershipPopup.id && partnershipPopup.classList.contains('_open')) {
-        //
-    }
-    else {
-        // wrapper.classList.remove('_overlay')
-        unLockPadding();
-    }
+    unLockPadding();
 }

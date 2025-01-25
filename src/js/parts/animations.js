@@ -194,49 +194,52 @@ const logoUnBlur = document.querySelector('.animated-logo .unblur');
 const logoBgc = document.querySelector('.animated-logo__back');
 
 if (logo) {
-    const header = document.querySelector('header');
-    const eye = logo.querySelector('.eye')
-    const mv = logo.querySelector('.mv')
-    const st = logo.querySelector('.st')
+    function getData() {
+        let width = 353.83
+        let top = 22
+        let height = 30
+        let scale = 0.41627
+        let ease = 'power4.inOut'
 
-    let logoTop = (window.innerHeight / 2 - (logo.getBoundingClientRect().height * 1.15) / 2) + 'px';
-    // logo.style.top = logoTop
+        if (window.innerWidth > 1024 && window.innerWidth <= 1200) {
+            scale = 0.50547
+            top = 22
+        }
 
-    let gap = logo.style.gap
-    let logoWidth = logo.style.width
+        if (window.innerWidth > 768 && window.innerWidth <= 1024) {
+            scale = 0.433
+            top = 15
+        }
 
-    let width = 353.83
-    let top = 3
-    top = 120
-    let height = 30
-    let scale = 0.41627
-    let ease = 'power4.inOut'
+        if (window.innerWidth > 600 && window.innerWidth <= 768) {
+            scale = 0.421
+            top = 15
+        }
 
-    if (window.innerWidth > 1024 && window.innerWidth <= 1200) {
-        scale = 0.50547
-        top = 87
+        if (window.innerWidth <= 600) {
+            scale = 0.6322
+            top = 13
+        }
+
+
+        return {
+            width: width,
+            top: top,
+            height: height,
+            width: width,
+            scale: scale,
+            ease: ease,
+        }
     }
 
-    if (window.innerWidth > 768 && window.innerWidth <= 1024) {
-        scale = 0.433
-        top = 89
-    }
-
-    if (window.innerWidth > 600 && window.innerWidth <= 768) {
-        scale = 0.421
-        top = 79
-    }
-
-    if (window.innerWidth <= 600) {
-        scale = 0.6322
-        top = 32
-    }
+    let data = getData();
 
     gsap.to(logoBlur, {
         delay: 0.3,
         opacity: 0,
         duration: 2.5,
-        ease: 'linear'
+        ease: 'linear',
+        filter: 'blur(0px)',
     })
 
     gsap.to(logoUnBlur, {
@@ -248,38 +251,45 @@ if (logo) {
 
     gsap.to(logoUnBlur, {
         delay: 3,
-        ease: ease,
-        scale: scale,
+        ease: data.ease,
+        scale: data.scale,
         duration: 0.9,
     });
 
     gsap.to(logoBlur, {
         delay: 3,
-        ease: ease,
-        scale: scale,
+        ease: data.ease,
+        scale: data.scale,
         duration: 0.9,
     });
-
-
 
     gsap.to(logo, {
         delay: 3,
         // ease: "easeOut",
-        ease: ease,
-        top: top,
-        gap: 25,
+        ease: data.ease,
+        top: data.top,
         y: 0,
         // height: height,
         // width: width,
         duration: 0.9,
 
         onComplete: () => {
-            logoBgc.classList.add('_remove')
             logo.classList.add('_active')
+
+            setTimeout(() => {
+                logoBgc.classList.add('_remove')
+            }, 300);
 
             setTimeout(() => {
                 logoBgc.remove()
             }, 1000);
+
+            window.addEventListener('resize', () => {
+                data = getData();
+
+                logoUnBlur.style.transform = `scale(${data.scale})`;
+                logo.style.top = data.top + 'px';
+            })
         }
     });
 }

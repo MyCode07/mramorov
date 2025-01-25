@@ -1224,6 +1224,12 @@ body:has(.stones) .catalog ._btn {
     // .single-news__title
 
     &__title {
+        margin-bottom: 100px;
+
+        @media (max-width: 768px) {
+            margin-bottom: 70px;
+        }
+
         .breadcrumbs {
             margin-top: 1em;
         }
@@ -1250,6 +1256,20 @@ body:has(.stones) .catalog ._btn {
 
             @media (max-width: 768px) {
                 margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+.single-project__title {
+
+    .pages-hero__title {
+        @media (max-width: 768px) {
+            flex-direction: column;
+            gap: 5px;
+
+            span {
+                opacity: 0.5;
             }
         }
     }

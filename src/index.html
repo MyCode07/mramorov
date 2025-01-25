@@ -4,22 +4,12 @@
 })
 
 @@include('./html/header.html',{"class":"_noanimate"})
-@@include('./html/loader.html')
+@@include('./html/line.html')
 
 <div class="animated-logo__back"></div>
 <div class="animated-logo">
-    <div class="logo blur">
-        <img class="eye" src="img/icons/logo/eye.svg" alt="">
-        <img class="mv" src="img/icons/logo/mv.svg" alt="">
-        <img class="st" src="img/icons/logo/st.svg" alt="">
-    </div>
-    <div class="logo unblur">
-        <img class="eye" src="img/icons/logo/eye.svg" alt="">
-        <a href="/">
-            <img class="mv" src="img/icons/logo/mv.svg" alt="">
-        </a>
-        <img class="st" src="img/icons/logo/st.svg" alt="">
-    </div>
+    @@include('./html/logo.html',{"class":"blur"})
+    @@include('./html/logo.html',{"class":"unblur"})
 </div>
 
 <main>
