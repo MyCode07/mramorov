@@ -95,6 +95,30 @@
         }
     }
 
+    // .menu-catalog
+
+    &-catalog {
+        display: block;
+        text-align: center;
+        width: fit-content;
+        text-transform: uppercase;
+        margin-inline: auto;
+        margin-bottom: 15px;
+
+        opacity: 0.5;
+
+        transition: opacity 0.3s ease 0s;
+
+        @include adaptive-value('font-size', 24, 15, 1);
+
+
+        @media (any-hover: hover) {
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+
     nav {
         padding: 45px 0;
 

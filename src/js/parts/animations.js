@@ -176,9 +176,10 @@ export const animateTextAction = () => {
                     ease: 'ease',
                     scrollTrigger: {
                         trigger: char,
-                        start: 'top 80%',
-                        end: 'top 20%',
+                        start: 'top 85%',
+                        end: 'top 50%',
                         scrub: true,
+                        // markers:true,
                         toggleActions: 'play play reverse reverse',
                     }
                 })

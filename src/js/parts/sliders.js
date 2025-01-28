@@ -4,7 +4,10 @@ import { Autoplay, Thumbs, FreeMode } from 'swiper/modules';
 const sliders = document.querySelectorAll('.swiper');
 if (sliders.length) {
     sliders.forEach(slider => {
-        const section = slider.closest('section');
+        let section = slider.closest('section');
+        if (!section) {
+            section = slider.closest('.popup');
+        }
         let prev = section.querySelector('.prev')
         let next = section.querySelector('.next')
         let pagination = section.querySelector('.pagination')
@@ -36,6 +39,25 @@ if (sliders.length) {
             });
         }
 
+        if (slider.closest('.popup')) {
+
+            const gallery = new Swiper(slider, {
+                modules: [
+                ],
+                spaceBetween: 20,
+                slidesPerView: 1,
+                grabCursor: true,
+            });
+
+            const galleryImages = document.querySelectorAll('.gallery-scroll__item');
+            if (galleryImages) {
+                galleryImages.forEach((item, i) => {
+                    item.addEventListener('click', () => {
+                        gallery.slideTo(i)
+                    })
+                })
+            }
+        }
     })
 }
 

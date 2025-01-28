@@ -65,43 +65,46 @@
                     </div>
 
                     <div class="product__actions">
-                        <label class="_label">за 1 м²:</label>
-                        <p class="_product__price">От<span>700</span><label>€</label></p>
-                        <div class="filter-fast filter-currency">
-                            <div class="select-body">
-                                <a href="" class="_active">
-                                    <img src="img/icons/eur.svg" alt="">
-                                </a>
-                                <a href="">
-                                    <img src="img/icons/usd.svg" alt="">
-                                </a>
-                                <a href="">
-                                    <img src="img/icons/rub.svg" alt="">
-                                </a>
+                        <div class="product__actions-item">
+                            <p class="_product__price">От<span>700</span><label>€</label></p>
+                            <label class="_label">за 1 м²:</label>
+                        </div>
+                        <div class="product__actions-item">
+                            <div class="filter-fast filter-currency">
+                                <div class="select-body">
+                                    <span data-currency="eur"
+                                        class="single-cash-change cash_eur cash_active _active">€</span>
+                                    <span data-currency="rub" class="single-cash-change cash_rub ">₽</span>
+                                    <span data-currency="usd" class="single-cash-change cash_en ">$</span>
+                                </div>
                             </div>
                         </div>
-                        <label class="_label">за Слэб: </label>
-                        <p class="_product__price">От<span>700</span><label>€</label></p>
-                        <div class="add-to-cart__block">
-                            <div class="quantity pro-qty">
-                                <span class="qty-btn minus">
-                                    <img src="img/icons/minus.svg" alt="">
-                                </span>
-                                <input type="number" class="input-text qty " step="1" min="1" max="100" name="quantity"
-                                    value="1" title="Qty" placeholder="">
-                                <span class="qty-btn plus">
-                                    <img src="img/icons/plus.svg" alt="">
-                                </span>
-                            </div>
-                            <button type="submit" class="add-to-cart loading">
-                                <span class="not-in-cart">Добавить в корзину</span>
-                                <span class="in-cart">В корзине</span>
-                            </button>
+                        <div class="product__actions-item">
+                            <p class="_product__price">От<span>700</span><label>€</label></p>
+                            <label class="_label">за Слэб: </label>
                         </div>
-                        <form action="#" method="post" hidden="">
-                            <input type="hidden" name="product_id" value="5904">
-                            <input type="hidden" name="quantity" value="1">
-                        </form>
+                        <div class="product__actions-item">
+                            <div class="add-to-cart__block">
+                                <div class="quantity pro-qty">
+                                    <span class="qty-btn minus">
+                                        <img src="img/icons/minus.svg" alt="">
+                                    </span>
+                                    <input type="number" class="input-text qty " step="1" min="1" max="100"
+                                        name="quantity" value="1" title="Qty" placeholder="">
+                                    <span class="qty-btn plus">
+                                        <img src="img/icons/plus.svg" alt="">
+                                    </span>
+                                </div>
+                                <button type="submit" class="add-to-cart loading">
+                                    <span class="not-in-cart">Добавить в корзину</span>
+                                    <span class="in-cart">В корзине</span>
+                                </button>
+                            </div>
+                            <form action="#" method="post" hidden="">
+                                <input type="hidden" name="product_id" value="5904">
+                                <input type="hidden" name="quantity" value="1">
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
