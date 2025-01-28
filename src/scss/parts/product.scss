@@ -193,6 +193,17 @@
                 margin-bottom: 10px;
                 border-bottom: 1px solid $red;
             }
+
+            &.noprice {
+                & > :nth-child(3) {
+                    display: none;
+                }
+
+                & > :last-child {
+                    width: 100%;
+                    grid-column: span 2;
+                }
+            }
         }
 
         // .product__actions-item

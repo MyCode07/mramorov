@@ -210,6 +210,18 @@
                 }
             }
 
+            &.noprice {
+                ._product__price:not(:first-child) {
+                    display: none;
+                }
+
+                .basket__product-delete {
+                    @media (max-width: 475px) {
+                        grid-column: span 2;
+                    }
+                }
+            }
+
             .quantity {
                 place-self: center;
                 gap: 2px;
