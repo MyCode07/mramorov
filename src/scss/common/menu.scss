@@ -5,13 +5,21 @@
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba($color: $black, $alpha: 0.75);
-    backdrop-filter: blur(13px);
-    -webkit-backdrop-filter: blur(13px);
     overflow: hidden;
     height: 0;
     pointer-events: none;
     // transition: transform 1.2s cubic-bezier(0.16, 1.08, 0.38, 0.98);
+
+
+    // background-color: rgba($color: $black, $alpha: 0.75);
+    // backdrop-filter: blur(13px);
+    // -webkit-backdrop-filter: blur(13px);
+
+    background-image: url('@img/blur.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+
 
     * {
         color: $white;
@@ -105,16 +113,17 @@
         margin-inline: auto;
         margin-bottom: 15px;
 
-        opacity: 0.5;
+        // opacity: 0.5;
 
         transition: opacity 0.3s ease 0s;
+        pointer-events: all;
 
-        @include adaptive-value('font-size', 24, 15, 1);
+        // @include adaptive-value('font-size', 24, 15, 1);
 
 
         @media (any-hover: hover) {
             &:hover {
-                opacity: 1;
+                opacity: 1 !important;
             }
         }
     }

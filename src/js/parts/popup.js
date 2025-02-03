@@ -23,10 +23,10 @@ document.addEventListener('click', function (e) {
         closePopup(targetEl)
     }
 
-    if (targetEl.classList.contains('gallery-scroll__item')) {
-        const img = targetEl.querySelector('img').src
-        document.querySelector('.popup-gallery img').src = img;
-    }
+    // if (targetEl.classList.contains('gallery-scroll__item')) {
+    //     const img = targetEl.querySelector('img').src
+    //     document.querySelector('.popup-gallery img').src = img;
+    // }
 
     if (targetEl.classList.contains('popup__close') || targetEl.hasAttribute('data-close-popup') || (targetEl.classList.contains('_container') && targetEl.closest('.popup-msg'))) {
         const popup = targetEl.closest('.popup');

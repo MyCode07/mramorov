@@ -47,9 +47,11 @@
     }
 
     &._home {
-        .main-logo {
-            @media (min-width:1025px) {
-                display: none;
+        .header__logo {
+            opacity: 0;
+
+            .main-logo {
+                display: block !important;
             }
         }
     }
@@ -182,6 +184,7 @@ body:has(.menu._open) .header {
 
 
 .animated-logo {
+    pointer-events: none;
 
     // .animated-logo__back
 
@@ -236,6 +239,10 @@ body:has(.menu._open) .header {
         display: block;
 
         width: 100%;
+    }
+
+    a {
+        display: block;
     }
 
 
