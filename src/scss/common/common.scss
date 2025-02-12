@@ -33,6 +33,10 @@ body {
             background-repeat: no-repeat;
         }
     }
+
+    @media (any-hover: hover) {
+        cursor: none;
+    }
 }
 
 .wrapper {
@@ -850,7 +854,7 @@ input[type="number"] {
     height: 14px;
 
     right: 60px;
-    bottom: 30px;
+    bottom: 60px;
 
     display: flex;
     align-items: center;
@@ -858,6 +862,7 @@ input[type="number"] {
 
     @media (max-width: 768px) {
         right: 30px;
+        bottom: 30px;
     }
 
     @media (max-width: 1024px) {
@@ -905,4 +910,40 @@ input[type="number"] {
 b,
 strong {
     font-weight: 400;
+}
+
+body:has(.animated-logo__back) .cursor-elem {
+    display: none;
+}
+
+.cursor-elem {
+    @media (any-hover: none) {
+        display: none;
+    }
+
+    .cursor {
+        position: fixed;
+        width: 30px;
+        height: 30px;
+        border: 1px solid $white;
+        border-radius: 50%;
+        left: 0;
+        top: 0;
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+        z-index: 1500000;
+    }
+
+    .cursor2 {
+        position: fixed;
+        width: 20px;
+        height: 20px;
+        background-color: $white;
+        border-radius: 50%;
+        left: 0;
+        top: 0;
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+        z-index: 1500000;
+    }
 }

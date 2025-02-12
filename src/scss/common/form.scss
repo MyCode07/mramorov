@@ -127,23 +127,22 @@
         & > div,
         button {
             width: 100%;
-            background-color: $red;
             height: 60px;
 
             color: rgba($color: $white, $alpha: 1);
             text-align: center;
             text-transform: uppercase;
-
-            @media (max-width: 768px) {
-                font-size: 12px;
-            }
-
+            background-color: rgba($color: $red, $alpha: 0.5);
             transition: all 0.3s ease 0s;
 
             @media (any-hover: hover) {
                 &:hover {
-                    background-color: rgba($color: $red, $alpha: 0.5);
+                    background-color: rgba($color: $red, $alpha: 0.25);
                 }
+            }
+
+            @media (max-width: 768px) {
+                font-size: 12px;
             }
         }
 

@@ -5,6 +5,7 @@ import { playVideoAction } from "./parts/video.js";
 import SmoothScroll from "smoothscroll-for-websites";
 
 import "./parts/forms.js";
+import "./parts/cursor.js";
 import "./parts/qty.js";
 import "./parts/sliders.js";
 import "./parts/popup.js";

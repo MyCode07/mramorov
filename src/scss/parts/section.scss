@@ -1306,6 +1306,10 @@ body:has(.stones) .catalog ._btn {
         font-style: normal;
         font-weight: 400;
         line-height: 0.7;
+
+        * {
+            font-family: inherit;
+        }
     }
 }
 
@@ -1581,6 +1585,13 @@ body:has(.stones) .catalog ._btn {
             }
         }
     }
+
+    // .advantages-second
+
+    &-second {
+        padding-top: 0 !important;
+        margin-bottom: 100px;
+    }
 }
 
 .map {
@@ -1634,8 +1645,9 @@ body:has(.stones) .catalog ._btn {
     .h1 {
         @include adaptive-value("font-size", 24, 18, 1);
         color: $red;
-        margin-bottom: 1em;
+        margin-bottom: 2em;
         text-align: center;
+        text-transform: uppercase;
 
         @media (max-width:768px) {
             text-align: left;

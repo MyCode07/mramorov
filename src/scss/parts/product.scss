@@ -356,6 +356,10 @@
     }
 }
 
+._product__price {
+    @include adaptive-value("font-size", 18, 16, 1);
+}
+
 .single-product {
     ._text-description__body {
         max-height: unset;
