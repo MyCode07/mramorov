@@ -197,14 +197,13 @@ const logoBgc = document.querySelector('.animated-logo__back');
 if (logo) {
     function getData() {
         let width = 353.83
-        let top = 22
+        let top = 17
         let height = 30
         let scale = 0.41627
         let ease = 'power4.inOut'
 
         if (window.innerWidth > 1024 && window.innerWidth <= 1200) {
             scale = 0.50547
-            top = 22
         }
 
         if (window.innerWidth > 768 && window.innerWidth <= 1024) {
@@ -214,12 +213,12 @@ if (logo) {
 
         if (window.innerWidth > 600 && window.innerWidth <= 768) {
             scale = 0.421
-            top = 15
+            top = 9
         }
 
         if (window.innerWidth <= 600) {
             scale = 0.6322
-            top = 13
+            top = 8
         }
 
 
