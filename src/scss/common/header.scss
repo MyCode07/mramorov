@@ -116,12 +116,31 @@
         flex-direction: column;
         justify-content: center;
         gap: 3px;
-        position: relative;
+        position: fixed;
+        left: 10px;
+        top: 10px;
+        z-index: 20;
         width: 50px;
         height: 27px;
 
+        @media (max-width:1024px) {
+            top: 9px;
+        }
+
         @media (max-width: 768px) {
             width: 30px;
+            top: 4px;
+        }
+
+        &-old {
+            width: 50px;
+            opacity: 0;
+            pointer-events: none;
+            height: 27px;
+
+            @media (max-width: 768px) {
+                width: 30px;
+            }
         }
 
         span {
@@ -174,6 +193,7 @@
         @media (max-width: 768px) {
             width: 30px;
             font-size: 10px;
+            margin-bottom: 4px;
         }
     }
 }
@@ -186,6 +206,9 @@ body:has(.menu._open) .header {
 .animated-logo {
     pointer-events: none;
     cursor: none;
+
+    opacity: 0;
+    transition: opacity 0.2s linear 0s;
 
     // .animated-logo__back
 

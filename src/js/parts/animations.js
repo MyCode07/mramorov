@@ -177,7 +177,7 @@ export const animateTextAction = () => {
                     scrollTrigger: {
                         trigger: char,
                         start: 'top 80%',
-                        end: 'top 30%',
+                        end: 'top 35%',
                         scrub: true,
                         // markers: true,
                         toggleActions: 'play play reverse reverse',
@@ -234,8 +234,12 @@ if (logo) {
 
     let data = getData();
 
+    setTimeout(() => {
+        logo.style.opacity = 1
+    }, 500);
+
     gsap.to(logoBlur, {
-        delay: 0.3,
+        delay: 0.8,
         opacity: 0,
         duration: 2.5,
         ease: 'linear',
@@ -243,7 +247,7 @@ if (logo) {
     })
 
     gsap.to(logoUnBlur, {
-        delay: 0.3,
+        delay: 0.8,
         opacity: 1,
         duration: 2.5,
         ease: 'linear'

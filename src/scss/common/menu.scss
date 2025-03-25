@@ -11,14 +11,14 @@
     // transition: transform 1.2s cubic-bezier(0.16, 1.08, 0.38, 0.98);
 
 
-    // background-color: rgba($color: $black, $alpha: 0.75);
-    // backdrop-filter: blur(13px);
-    // -webkit-backdrop-filter: blur(13px);
 
-    background-image: url('@img/blur.png');
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-color: rgba($color: $black, $alpha: 0.75);
+    backdrop-filter: blur(13px);
+    -webkit-backdrop-filter: blur(13px);
 
+    // background-image: url('@img/blur.png');
+    // background-size: cover;
+    // background-repeat: no-repeat;
 
 
     * {
@@ -45,25 +45,21 @@
         flex-direction: column;
         justify-content: center;
         gap: 3px;
+        height: 30px;
         width: 50px;
-        height: 27px;
-
         position: absolute;
-        left: 15px;
-        top: 25px;
-
-        @media (max-width: 1024px) {
-            top: 12px;
-            left: 10px;
-        }
+        left: 10px;
+        top: 10px;
 
         @media (max-width: 768px) {
             width: 30px;
         }
 
+        display: none;
+
         span {
             display: block;
-            width: 50px;
+            width: 30px;
             height: 2px;
             background-color: $white;
             transition: all 0.3s ease 0s;
@@ -71,6 +67,8 @@
             left: 0;
             top: 50%;
             pointer-events: none;
+
+            width: 50px;
 
             @media (max-width: 768px) {
                 width: 30px;
@@ -94,13 +92,11 @@
         align-items: center;
         justify-content: space-between;
         min-height: 100%;
-        padding-top: 60px;
         padding-bottom: 15px;
 
         position: relative;
 
         @media (max-width: 768px) {
-            padding-top: 35px;
             padding-bottom: 30px;
         }
     }

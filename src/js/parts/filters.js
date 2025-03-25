@@ -39,10 +39,21 @@ if (filterSortBtn) {
 
 const showTextBtn = document.querySelector('._show-text');
 const textBody = document.querySelector('._text-description__body');
+let scrollpos = 0
 
 if (showTextBtn) {
     showTextBtn.addEventListener('click', () => {
+        if (!textBody.classList.contains('_active')) {
+            scrollpos = window.scrollY
+        }
+
         showTextBtn.classList.toggle('_active');
         textBody.classList.toggle('_active');
+
+        if (!textBody.classList.contains('_active')) {
+            window.scrollTo(0, scrollpos)
+        }
+        console.log(scrollpos);
+
     });
 }

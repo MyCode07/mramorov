@@ -2,6 +2,7 @@
     position: relative;
     padding-top: 120px;
     padding-bottom: 15px;
+    overflow: hidden;
 
     @media (max-width: 1024px) {
         padding-top: 60px;
@@ -193,8 +194,8 @@
         align-items: center;
         justify-content: space-between;
         width: 100%;
-        padding: 2px;
         position: relative;
+        padding: 2px 5px;
 
         &:before {
             position: absolute;
@@ -214,6 +215,7 @@
 
         & > :nth-child(2) {
             text-align: center;
+            font-size: 0.95em;
         }
 
         & > :last-child {

@@ -6,13 +6,17 @@
 @@include('./html/header.html',{"class":"_noanimate _home"})
 @@include('./html/line.html')
 
+<!-- <div class="animated-logo__back"></div>
+<div class="animated-logo">
+    @include('./html/logo-blur.html',{"class":"blur"})
+    @include('./html/logo.html',{"class":"unblur"})
+</div> -->
+
 <div class="animated-logo__back"></div>
 <div class="animated-logo">
-    @@include('./html/logo-blur.html',{"class":"blur"})
-    @@include('./html/logo.html',{"class":"unblur"})
+    @@include('../logo/compressed/blur.svg')
+    @@include('../logo/compressed/logo.svg')
 </div>
-
-
 
 <main>
     <button class="mute-audio" data-audio="files/audio.mp3">
@@ -26,7 +30,7 @@
         </div>
         <div class="section__container _container">
             <div class="section__body">
-
+                <h1>Поставка натурального камня напрямую из Италии. Изготовление изделий из мрамора, гранита, оникса на заказ!</h1>
             </div>
         </div>
     </section>
@@ -36,9 +40,9 @@
     <section class="section quote _mb0">
         <div class="section__container _container">
             <div class="section__body">
-                <p class="_text-animated" data-bg-color="rgba(255,255,255,0.1)" data-fg-color="currentcolor">Мелочи
+                <h2 class="_text-animated" data-bg-color="rgba(255,255,255,0.1)" data-fg-color="currentcolor">Мелочи
                     <br>создают совершенство,<br>а совершенство<br>это не мелочь.
-                </p>
+                </h2>
             </div>
         </div>
     </section>
@@ -64,10 +68,10 @@
     <section class="section red">
         <div class="section__container _container">
             <div class="section__body">
-                <p class="_text-animated" data-bg-color="rgba(255,0,0,0.1)" data-fg-color="currentcolor">Истинный
+                <h3 class="_text-animated" data-bg-color="rgba(255,0,0,0.1)" data-fg-color="currentcolor">Истинный
                     стиль - это бесшовная интеграция креативности и функциональности, где каждая деталь служит
                     как эстетической,
-                    так и практической цели.</p>
+                    так и практической цели.</h3>
                 <div data-hidden>
                     <video playsinline poster="img/MRAMOROV.png" muted loop class="_video">
                         <source src="files/MRAMOROV.mp4" type="video/mp4">
@@ -86,23 +90,23 @@
             <div class="section__body">
                 <ol>
                     <li data-hidden-text>
-                        <span><i>*</i>Консультация</span>
+                        <h4><i>*</i>Консультация</h4>
                         <p>Поможем вам подобрать материалы с учетом специфики проекта.</p>
                     </li>
                     <li data-hidden-text>
-                        <span><i>*</i>Анализ проекта</span>
+                        <h4><i>*</i>Анализ проекта</h4>
                         <p>Учитываем все детали и требования для создания точного плана.</p>
                     </li>
                     <li data-hidden-text>
-                        <span>Дизайн</span>
+                        <h4>Дизайн</h4>
                         <p>Разрабатываем 2D и 3D модели для визуализации будущего изделия.</p>
                     </li>
                     <li data-hidden-text>
-                        <span><i>*</i>Производство</span>
+                        <h4><i>*</i>Производство</h4>
                         <p>Выполняем точную обработку на современном оборудовании.</p>
                     </li>
                     <li data-hidden-text>
-                        <span><i>*</i>Доставка и установка</span>
+                        <h4><i>*</i>Доставка и установка</h4>
                         <p>Гарантируем бережную доставку и профессиональный монтаж готового изделия.</p>
                     </li>
                 </ol>

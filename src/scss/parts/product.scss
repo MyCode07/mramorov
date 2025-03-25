@@ -1,9 +1,9 @@
 .product {
     .breadcrumb {
-        margin-bottom: 60px;
+        margin-bottom: 90px;
 
         @media (max-width: 1024px) {
-            margin-bottom: 30px;
+            margin-bottom: 60px;
         }
     }
 
@@ -15,7 +15,7 @@
     }
 
     .grid-3 {
-        gap: 60px 30px;
+        gap: 60px 20px;
 
         @media (max-width: 1024px) {
             gap: 45px 20px;
@@ -47,14 +47,16 @@
         text-align: center;
         gap: 5px;
         margin-bottom: 30px;
+        margin-top: 30px;
 
         @media (max-width: 1024px) {
             margin-bottom: 15px;
+            margin-top: 15px;
         }
 
         h1,
         span {
-            @include adaptive-value("font-size", 50, 18, 1);
+            @include adaptive-value("font-size", 30, 18, 1);
             font-style: normal;
             font-weight: 300;
             line-height: 1;

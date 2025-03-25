@@ -71,21 +71,17 @@
             pointer-events: none;
             transition: filter 0.3s ease 0s;
 
-            @media (any-hover: hover) {
-                filter: grayscale(100%);
-            }
+            filter: grayscale(100%);
         }
 
-        @media (any-hover: hover) {
-            &:hover {
-                &:after {
-                    opacity: 0;
-                }
+        &:hover {
+            &:after {
+                opacity: 0;
+            }
 
-                img,
-                picture {
-                    filter: grayscale(0);
-                }
+            img,
+            picture {
+                filter: grayscale(0);
             }
         }
     }
@@ -187,20 +183,27 @@
         width: 100%;
         position: relative;
         display: block;
+        flex: 1 1 auto;
+        transition: opacity 0.3s ease 0s;
+
+        @include adaptive-value('height', 350, 200, 1);
+
 
         img,
         picture {
+            display: block;
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: cover;
             pointer-events: none;
         }
 
-        @media (any-hover: hover) {
-            &:hover {
-                + .product-card__name {
-                    opacity: 0.5;
-                }
+        &:hover {
+
+            opacity: 0.95;
+
+            + .product-card__name {
+                opacity: 0.5;
             }
         }
     }
