@@ -982,4 +982,44 @@ body:has(.animated-logo__back) .cursor-elem {
     }
 }
 
- 
+
+._line-shadow {
+    position: relative;
+
+    &:before,
+    &:after {
+        position: absolute;
+        content: '';
+        left: 0;
+        width: 100%;
+        height: 70px;
+    }
+
+    &:before {
+        top: 0;
+        top: -70px;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%);
+    }
+
+    &:after {
+        bottom: 0;
+        bottom: -70px;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, #000 100%);
+    }
+}
+
+.red ._line-shadow {
+    &:before {
+        top: 0;
+        height: 60px;
+    }
+
+    &:after {
+        bottom: 0;
+        height: 140px;
+
+        @media (max-width: 1024px) {
+            height: 100px;
+        }
+    }
+}
