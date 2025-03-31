@@ -1194,6 +1194,12 @@ body:has(.stones) .catalog ._btn {
     // .projects-home
 
     &-home {
+
+        .section__body {
+            background-color: $black;
+        }
+
+
         .cart-item {
             margin-inline: auto;
             width: 50%;
