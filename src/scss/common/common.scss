@@ -808,6 +808,7 @@ input[type="number"] {
     max-height: calc(100% - 25px);
     background-color: $red;
     pointer-events: none;
+    height: 100% !important;
 }
 
 .search-form {
@@ -983,6 +984,12 @@ body:has(.animated-logo__back) .cursor-elem {
 }
 
 
+.qty-btn,
+.add-to-cart {
+    user-select: none;
+}
+
+
 ._line-shadow {
     position: relative;
 
@@ -1021,5 +1028,16 @@ body:has(.animated-logo__back) .cursor-elem {
         @media (max-width: 1024px) {
             height: 100px;
         }
+    }
+}
+
+.cart-item._line-shadow {
+    background-color: $black;
+
+    &:before {}
+
+    &:after {
+
+        @media (max-width: 1024px) {}
     }
 }
